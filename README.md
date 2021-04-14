@@ -28,21 +28,21 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 
 **Required Must-have Stories**
 
-* User can create a new account or log in and log out of his or her account.
-* User can directly type in the ingredients or take a picture and the app will scan for listed ingredients in picture
-* Search for recipes with user's available ingredients and display relevant recipes involving those ingredients
-* User can tap a post to view recipe details
-* User can also post new recipes along with the ingredients and pictures
-* User can see other users' recipe posts
-* User can refresh the list of recipes by pulling down to refresh
+- [ ] User can create a new account or log in and log out of his or her account.
+- [ ] User can directly type in the ingredients or take a picture and the app will scan for listed ingredients in picture
+- [ ] Search for recipes with user's available ingredients and display relevant recipes involving those ingredients
+- [ ] User can tap a post to view recipe details
+- [ ] User can also post new recipes along with the ingredients and pictures
+- [ ] User can see other users' recipe posts
+- [ ] User can refresh the list of recipes by pulling down to refresh
 
 **Optional Nice-to-have Stories**
 
-* User can load more recipes once he or she reaches the bottom of the feed using infinite scrolling
-* Translate a list of ingredients or a recipe in another language 
-* Provide a list of possible ingredient substitutions
-* User can favorite recipes and view them later
-* Settings (Notifications, General, Accessibility, Display)
+- [ ] User can load more recipes once he or she reaches the bottom of the feed using infinite scrolling
+- [ ] Translate a list of ingredients or a recipe in another language 
+- [ ] Provide a list of possible ingredient substitutions
+- [ ] User can favorite recipes and view them later
+- [ ] Settings (Notifications, General, Accessibility, Display)
 
 ### 2. Screen Archetypes
 
@@ -153,10 +153,3 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 | `GET` | /{id}/analyzedInstructions   | get recipe instructions for given recipeId       |
 | `GET` | /findByIngredients?ingredients={ingredientsList}   | return recipes with the given ingredientsList        |
 | `GET` | /{id}/information   | get recipe information with the given recipeId        |
-
-**Google Cloud Vision API**
-* Base URL - https://vision.googleapis.com/v1
-
-| HTTP Verb | Endpoint     | Description |
-| -------- | -------- | --------    |
-| `POST` | /images:annotate   | get text from image  |
