@@ -1,4 +1,4 @@
-package com.example.notecook;
+package com.example.notecook.Fragments;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -25,6 +25,7 @@ import androidx.fragment.app.Fragment;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestParams;
 import com.example.notecook.Models.Recipes;
+import com.example.notecook.R;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;

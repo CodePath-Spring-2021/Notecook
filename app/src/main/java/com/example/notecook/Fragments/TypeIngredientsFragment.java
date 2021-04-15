@@ -1,4 +1,4 @@
-package com.example.notecook;
+package com.example.notecook.Fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.notecook.Models.Recipes;
+import com.example.notecook.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -91,9 +93,9 @@ public class TypeIngredientsFragment extends Fragment {
                 ingredientList = etIngredients.getText().toString();
                 getRecipesId(API_KEY);
                 etIngredients.setText("");
+                Toast.makeText(getContext(), "Searching for your recipes!", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     protected void getRecipesId(String API_KEY) {
