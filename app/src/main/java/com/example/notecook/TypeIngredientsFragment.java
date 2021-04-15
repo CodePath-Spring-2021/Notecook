@@ -1,19 +1,20 @@
 package com.example.notecook;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
-import com.codepath.asynchttpclient.callback.TextHttpResponseHandler;
 import com.example.notecook.Models.Recipes;
 
 import org.json.JSONArray;
@@ -26,65 +27,105 @@ import java.util.List;
 import okhttp3.Headers;
 
 
-public class TypeIngredientsActivity extends AppCompatActivity {
+public class TypeIngredientsFragment extends Fragment {
 
-    public static final String TAG = "TypeIngredientsActivity";
+    public static final String TAG = "TypeIngredientsFragment";
     EditText etIngredients;
     Button btnSearch;
+    private String ingredientList;
     List<Integer> recipeIdList = new ArrayList<>();
     List<Recipes> recipes = new ArrayList<>();
     AsyncHttpClient client = new AsyncHttpClient();
     RequestParams params = new RequestParams();
+    private static TypeIngredientsFragment instance = null;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_type_ingredients);
-
-        String API_KEY = getString(R.string.API_KEY);
-
-        etIngredients = findViewById(R.id.etIngredients);
-        btnSearch = findViewById(R.id.btnSearch);
-        getRecipesId(API_KEY);
+    public TypeIngredientsFragment() {
+        // Required empty public constructor
     }
 
-    private void getRecipesId(String API_KEY) {
+    public static TypeIngredientsFragment getInstance() {
+        return instance;
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @return A new instance of fragment ComposeFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static TakePictureFragment newInstance(String param1, String param2) {
+        TakePictureFragment fragment = new TakePictureFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        instance = this;
+    }
+
+    // The onCreateView method is called when Fragment should create its View object hierarchy
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_type_ingredients, container, false);
+    }
+
+    // This event is triggered soon after onCreateView().
+    // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        String API_KEY = getString(R.string.API_KEY);
+
+        etIngredients = view.findViewById(R.id.etIngredients);
+        btnSearch = view.findViewById(R.id.btnSearch);
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ingredientList = etIngredients.getText().toString();
-                params.put("ingredients", ingredientList);
-                params.put("apiKey", API_KEY);
-                client.get("https://api.spoonacular.com/recipes/findByIngredients", params, new JsonHttpResponseHandler() {
-                            @Override
-                            public void onSuccess(int i, Headers headers, JSON json) {
-                                Log.d(TAG, "Successful call!");
-                                JSONArray jsonArray = json.jsonArray;
-                                for(int j = 0; j < jsonArray.length(); j++) {
-                                    try {
-                                        JSONObject foundedRecipes = jsonArray.getJSONObject(j);
-                                        Log.d(TAG, "Results retrieved!");
-                                        recipeIdList.add(foundedRecipes.getInt("id"));
-                                    } catch (JSONException e) {
-                                        Log.e(TAG, "JSON exception hit", e);
-                                        e.printStackTrace();
-                                    }
-                                }
-                                Log.i(TAG, "List: " + recipeIdList);
-                                getRecipes(API_KEY);
-                            }
-
-                            @Override
-                            public void onFailure(int i, Headers headers, String s, Throwable throwable) {
-                                Log.e(TAG, "Failed call!", throwable);
-                            }
-                        });
+                ingredientList = etIngredients.getText().toString();
+                getRecipesId(API_KEY);
                 etIngredients.setText("");
+            }
+        });
+
+    }
+
+    protected void getRecipesId(String API_KEY) {
+        params.put("ingredients", ingredientList);
+        params.put("apiKey", API_KEY);
+        client.get("https://api.spoonacular.com/recipes/findByIngredients", params, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int i, Headers headers, JSON json) {
+                Log.d(TAG, "Successful call!");
+                JSONArray jsonArray = json.jsonArray;
+                for(int j = 0; j < jsonArray.length(); j++) {
+                    try {
+                        JSONObject foundedRecipes = jsonArray.getJSONObject(j);
+                        Log.d(TAG, "Results retrieved!");
+                        recipeIdList.add(foundedRecipes.getInt("id"));
+                    } catch (JSONException e) {
+                        Log.e(TAG, "JSON exception hit", e);
+                        e.printStackTrace();
+                    }
+                }
+                Log.i(TAG, "List: " + recipeIdList);
+                getRecipes(API_KEY);
+            }
+
+            @Override
+            public void onFailure(int i, Headers headers, String s, Throwable throwable) {
+                Log.e(TAG, "Failed call!", throwable);
             }
         });
     }
 
-    private void getRecipes(String API_KEY) {
+    protected void getRecipes(String API_KEY) {
         List<String> stepsForOneRecipe = new ArrayList<>();
         for(int i = 0; i < recipeIdList.size(); i++) {
             params.put("apiKey", API_KEY);
@@ -132,5 +173,4 @@ public class TypeIngredientsActivity extends AppCompatActivity {
                     });
         }
     }
-
 }
