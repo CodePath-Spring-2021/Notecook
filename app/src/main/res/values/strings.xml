@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Notecook</string>
+    <string name="type_in_your_comma_separated_list_of_available_ingredients">Type in your comma-separated list of available ingredients.</string>
+</resources>
