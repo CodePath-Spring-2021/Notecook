@@ -9,6 +9,10 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.notecook.Fragments.FindFragment;
+import com.example.notecook.Fragments.HomeFragment;
+import com.example.notecook.Fragments.TakePictureFragment;
+import com.example.notecook.Fragments.TypeIngredientsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.action_home:
-                        fragment = new TypeIngredientsFragment(); //CHANGE TO HOMEFRAGMENT
+                        fragment = new HomeFragment(); //CHANGE TO HOMEFRAGMENT
                         break;
                     case R.id.action_find:
-                        fragment = new TakePictureFragment(); // HAVE ONE BE TAKEPIC AND OTHER TYPEINGREDIENTS
+                        fragment = new FindFragment(); // HAVE ONE BE TAKEPIC AND OTHER TYPEINGREDIENTS
                         break;
                     case R.id.action_compose:
                         fragment = new TypeIngredientsFragment(); // CHANGE TO POSTFRAGMENT
