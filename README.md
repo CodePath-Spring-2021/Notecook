@@ -29,8 +29,11 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 **Required Must-have Stories**
 
 - [ ] User can create a new account or log in and log out of his or her account.
-- [ ] User can directly type in the ingredients or take a picture and the app will scan for listed ingredients in picture
-- [ ] Search for recipes with user's available ingredients
+- [x] User can directly type in the ingredients or take a picture and the app will scan for listed ingredients in picture
+      
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/findbyingredients_walkthrough.gif" width=150>
+      
+- [x] Search for recipes with user's available ingredients
 - [ ] Display relevant recipes involving those ingredients
 - [ ] User can tap a post to view recipe details
 - [ ] User can also post new recipes along with the ingredients and pictures
