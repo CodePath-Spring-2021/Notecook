@@ -9,8 +9,10 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.notecook.Fragments.CreateFragment;
 import com.example.notecook.Fragments.FindFragment;
 import com.example.notecook.Fragments.HomeFragment;
+import com.example.notecook.Fragments.ProfileFragment;
 import com.example.notecook.Fragments.TakePictureFragment;
 import com.example.notecook.Fragments.TypeIngredientsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -41,25 +43,26 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.action_home:
-                        fragment = new HomeFragment(); //CHANGE TO HOMEFRAGMENT
+                        fragment = new HomeFragment();
                         break;
                     case R.id.action_find:
-                        fragment = new FindFragment(); // HAVE ONE BE TAKEPIC AND OTHER TYPEINGREDIENTS
+                        fragment = new FindFragment();
                         break;
                     case R.id.action_compose:
-                        fragment = new TypeIngredientsFragment(); // CHANGE TO POSTFRAGMENT
+                        fragment = new CreateFragment();
                         break;
                     case R.id.action_profile:
-                        fragment = new TakePictureFragment(); // CHANGE TO PROFILEFRAGMENT
+                        fragment = new ProfileFragment();
                         break;
                     default:
-                        fragment = new TypeIngredientsFragment(); //CHANGE TO HOMEFRAGMENT
+                        fragment = new HomeFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;
             }
         });
+
         // set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
