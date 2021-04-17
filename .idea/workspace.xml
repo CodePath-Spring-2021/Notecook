@@ -28,27 +28,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad0c0f3c-7fbe-4987-b1e0-2cc6153713ba" name="Default Changelist" comment="Adding menu items to FindFragment">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/notecook/Fragments/CreateFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/notecook/Fragments/ProfileFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_create.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/findbyingredients_walkthrough.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="ad0c0f3c-7fbe-4987-b1e0-2cc6153713ba" name="Default Changelist" comment="Update with new Activities">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/notecook/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/notecook/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618521809528</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update with new Activities">
+      <created>1618533748750</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618533748750</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +235,8 @@
     <MESSAGE value="Making changes" />
     <MESSAGE value="Commit untracked files" />
     <MESSAGE value="Adding menu items to FindFragment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding menu items to FindFragment" />
+    <MESSAGE value="Update with new Activities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update with new Activities" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="310" key="#Notifications" timestamp="1618521965224">
@@ -271,24 +265,28 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="576" y="344" key="Github.ShareDialog/0.23.1440.836@0.23.1440.836" timestamp="1618440306285" />
-    <state width="1376" height="326" key="GridCell.Tab.0.bottom" timestamp="1618519403072">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state width="1860" height="237" key="GridCell.Tab.0.bottom" timestamp="1618621762985">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1618621762985" />
     <state width="1376" height="161" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1618421759853" />
     <state width="1376" height="326" key="GridCell.Tab.0.bottom/0.23.1440.837@0.23.1440.837" timestamp="1618519403072" />
-    <state width="1376" height="326" key="GridCell.Tab.0.center" timestamp="1618519403071">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state width="1860" height="237" key="GridCell.Tab.0.center" timestamp="1618621762985">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1618621762985" />
     <state width="1376" height="161" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1618421759851" />
     <state width="1376" height="326" key="GridCell.Tab.0.center/0.23.1440.837@0.23.1440.837" timestamp="1618519403071" />
-    <state width="1376" height="326" key="GridCell.Tab.0.left" timestamp="1618519403070">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state width="1860" height="237" key="GridCell.Tab.0.left" timestamp="1618621762985">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1618621762985" />
     <state width="1376" height="161" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1618421759849" />
     <state width="1376" height="326" key="GridCell.Tab.0.left/0.23.1440.837@0.23.1440.837" timestamp="1618519403070" />
-    <state width="1376" height="326" key="GridCell.Tab.0.right" timestamp="1618519403071">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state width="1860" height="237" key="GridCell.Tab.0.right" timestamp="1618621762985">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state width="1860" height="237" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1618621762985" />
     <state width="1376" height="161" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1618421759852" />
     <state width="1376" height="326" key="GridCell.Tab.0.right/0.23.1440.837@0.23.1440.837" timestamp="1618519403071" />
     <state x="298" y="190" key="IDE.errors.dialog" timestamp="1618374063270">
@@ -299,10 +297,10 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="339" y="208" key="MultipleFileMergeDialog/0.23.1440.836@0.23.1440.836" timestamp="1618513836838" />
-    <state x="294" y="137" key="Vcs.Push.Dialog.v2" timestamp="1618533667798">
+    <state x="294" y="137" key="Vcs.Push.Dialog.v2" timestamp="1618533776207">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="294" y="137" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1618533667798" />
+    <state x="294" y="137" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1618533776207" />
     <state x="310" y="180" key="Vcs.Push.Dialog.v2/0.23.1440.837@0.23.1440.837" timestamp="1618521832488" />
     <state x="487" y="225" key="chooseDestDirectoryDialog" timestamp="1618375571388">
       <screen x="0" y="23" width="1440" height="837" />
@@ -321,9 +319,10 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="532" y="341" key="git4idea.remote.GitConfigureRemotesDialog/0.23.1440.836@0.23.1440.836" timestamp="1618466556035" />
-    <state x="375" y="183" width="670" height="677" key="search.everywhere.popup" timestamp="1618468952286">
-      <screen x="0" y="23" width="1440" height="837" />
+    <state x="1866" y="199" width="894" height="842" key="search.everywhere.popup" timestamp="1618621719948">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state x="1866" y="199" width="894" height="842" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1618621719948" />
     <state x="375" y="183" width="670" height="676" key="search.everywhere.popup/0.23.1440.836@0.23.1440.836" timestamp="1618467218349" />
     <state x="375" y="183" width="670" height="677" key="search.everywhere.popup/0.23.1440.837@0.23.1440.837" timestamp="1618468952286" />
   </component>
