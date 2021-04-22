@@ -11,7 +11,7 @@ import java.util.List;
 public class Recipes {
     String title;
     String image;
-    double readyInMinutes;
+    int readyInMinutes;
     List<String> instructions = new ArrayList<>();
     String author;
     List<String> ingredientName = new ArrayList<>();
@@ -19,7 +19,7 @@ public class Recipes {
     public Recipes(JSONObject jsonObject, List<String> stepsForOneRecipe) throws JSONException {
         title = jsonObject.getString("title");
         image = jsonObject.getString("image");
-        readyInMinutes = jsonObject.getDouble("readyInMinutes");
+        readyInMinutes = jsonObject.getInt("readyInMinutes");
         author = jsonObject.getString("creditsText");
         JSONArray ingredients = jsonObject.getJSONArray("extendedIngredients");
         for(int i = 0; i < ingredients.length(); i++) {
@@ -43,7 +43,7 @@ public class Recipes {
         return image;
     }
 
-    public double getReadyInMinutes() {
+    public int getReadyInMinutes() {
         return readyInMinutes;
     }
 

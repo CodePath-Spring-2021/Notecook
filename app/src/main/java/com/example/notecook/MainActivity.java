@@ -8,9 +8,10 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.PopupMenu;
 
 import com.example.notecook.Fragments.CreateFragment;
-import com.example.notecook.Fragments.FindFragment;
 import com.example.notecook.Fragments.HomeFragment;
 import com.example.notecook.Fragments.ProfileFragment;
 import com.example.notecook.Fragments.TakePictureFragment;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     private final int REQUEST_CODE = 20;
     private BottomNavigationView bottomNavigationView;
+    private FrameLayout flContainer;
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
@@ -40,13 +42,33 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment;
+                Fragment fragment = new Fragment();
                 switch (item.getItemId()) {
                     case R.id.action_home:
                         fragment = new HomeFragment();
                         break;
-                    case R.id.action_find:
-                        fragment = new FindFragment();
+                    case R.id.action_find: {
+                        PopupMenu popupMenu = new PopupMenu(MainActivity.this, bottomNavigationView);
+                        popupMenu.inflate(R.menu.menu_find_ingredient);
+                        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                Fragment frag = new Fragment();
+                                switch (item.getItemId()) {
+                                    case R.id.menu_picture:
+                                        frag = new TakePictureFragment();
+                                        break;
+                                    case R.id.menu_type:
+                                        frag = new TypeIngredientsFragment();
+                                        break;
+                                }
+                                fragmentManager.beginTransaction().replace(R.id.flContainer, frag).commit();
+                                return true;
+                            }
+                        });
+                        //show the menu
+                        popupMenu.show();
+                    }
                         break;
                     case R.id.action_compose:
                         fragment = new CreateFragment();

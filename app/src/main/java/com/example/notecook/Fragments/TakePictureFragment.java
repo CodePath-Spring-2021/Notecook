@@ -21,18 +21,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestParams;
-import com.example.notecook.Models.Recipes;
 import com.example.notecook.R;
+import com.example.notecook.RecipeListActivity;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -51,9 +49,6 @@ public class TakePictureFragment extends Fragment {
     private String ingredientsList;
     private File photoFile;
     private String photoFileName = "photo.jpg";
-    List<Integer> recipeIdList = new ArrayList<>();
-    List<Recipes> recipes = new ArrayList<>();
-    AsyncHttpClient client = new AsyncHttpClient();
     RequestParams params = new RequestParams();
 
     public TakePictureFragment() {
@@ -115,10 +110,13 @@ public class TakePictureFragment extends Fragment {
                 ingredientsList = getImageText(photoFile);
                 Log.i(TAG, "ingredients List: " + ingredientsList);
                 Toast.makeText(getContext(), ingredientsList, Toast.LENGTH_SHORT).show();
-                TypeIngredientsFragment.getInstance().getRecipesId(API_KEY);
+                Intent intent = new Intent(getActivity(), RecipeListActivity.class);
+                intent.putExtra("ingredientsList", ingredientsList);
+                startActivity(intent);
             }
         });
     }
+
 
     private String getImageText(File photoFile) {
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getContext()).build();
