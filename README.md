@@ -34,8 +34,11 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
   <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/findbyingredients_walkthrough.gif" width=150>
       
 - [x] Search for recipes with user's available ingredients
-- [ ] Display relevant recipes involving those ingredients
-- [ ] User can tap a post to view recipe details
+- [x] Display relevant recipes involving those ingredients
+
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/findbyingredients_walkthrough.gif" width=150>
+
+- [x] User can tap a post to view recipe details (DetailActivity will be implemented in Milestone 3)
 - [ ] User can also post new recipes along with the ingredients and pictures
 - [ ] User can see other users' recipe posts
 - [ ] User can refresh the list of recipes by pulling down to refresh
