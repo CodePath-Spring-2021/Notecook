@@ -1,6 +1,5 @@
 package com.example.notecook.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.notecook.R;
-import com.example.notecook.RecipeListActivity;
 
 
 public class TypeIngredientsFragment extends Fragment {
@@ -76,9 +73,11 @@ public class TypeIngredientsFragment extends Fragment {
                 ingredientsList = etIngredients.getText().toString();
                 Toast.makeText(getContext(), "Searching for your recipes!", Toast.LENGTH_SHORT).show();
                 etIngredients.setText("");
-                Intent intent = new Intent(getActivity(), RecipeListActivity.class);
-                intent.putExtra("ingredientsList", ingredientsList);
-                startActivity(intent);
+                Bundle bundle = new Bundle();
+                bundle.putString("ingredientsList", ingredientsList);
+                RecipeListFragment fragment2 = new RecipeListFragment();
+                fragment2.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.flContainer, fragment2).commit();
             }
         });
     }

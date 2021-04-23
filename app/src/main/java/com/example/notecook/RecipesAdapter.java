@@ -11,9 +11,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.notecook.Fragments.DetailFragment;
 import com.example.notecook.Models.Recipes;
 
 import java.util.List;
@@ -71,8 +76,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             rlRecipeContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(context, DetailActivity.class);
-                    context.startActivity(i);
+                    AppCompatActivity activity = (AppCompatActivity) context;
+                    Fragment detailFrag = new DetailFragment();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, detailFrag).addToBackStack(null).commit();
                 }
             });
         }

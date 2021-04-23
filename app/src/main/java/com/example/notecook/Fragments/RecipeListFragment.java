@@ -1,16 +1,24 @@
-package com.example.notecook;
+package com.example.notecook.Fragments;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.notecook.Models.Recipes;
+import com.example.notecook.R;
+import com.example.notecook.RecipesAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,9 +29,14 @@ import java.util.List;
 
 import okhttp3.Headers;
 
-public class RecipeListActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link RecipeListFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class RecipeListFragment extends Fragment {
 
-    public static final String TAG = "RecipeListActivity";
+    public static final String TAG = "RecipeListFragment";
     private RecyclerView rvRecipe;
     protected RecipesAdapter adapter;
     protected List<Recipes> recipesList;
@@ -32,23 +45,55 @@ public class RecipeListActivity extends AppCompatActivity {
     AsyncHttpClient client = new AsyncHttpClient();
     RequestParams params = new RequestParams();
 
+    public RecipeListFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment RecipeListFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static RecipeListFragment newInstance(String param1, String param2) {
+        RecipeListFragment fragment = new RecipeListFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_list);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_recipe_list, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         String API_KEY = getString(R.string.API_KEY);
-        Bundle bundle = getIntent().getExtras();
+
+        Bundle bundle = this.getArguments();
         if(bundle != null) {
             ingredients = bundle.getString("ingredientsList");
         }else{
             Log.i(TAG, "Cannot get ingredientsList");
         }
-        rvRecipe = findViewById(R.id.rvRecipe);
+        rvRecipe = view.findViewById(R.id.rvRecipe);
         recipesList = new ArrayList<>();
-        adapter = new RecipesAdapter(this, recipesList);
+        adapter = new RecipesAdapter(getContext(), recipesList);
         rvRecipe.setAdapter(adapter);
-        rvRecipe.setLayoutManager(new LinearLayoutManager(this));
+        rvRecipe.setLayoutManager(new LinearLayoutManager(getContext()));
         getRecipesId(API_KEY);
     }
 
@@ -116,7 +161,6 @@ public class RecipeListActivity extends AppCompatActivity {
                             JSONObject jsonObject = json.jsonObject;
                             try {
                                 recipesList.addAll(Recipes.RecipeList(jsonObject, stepsForOneRecipe));
-                                Log.i(TAG, "Recipe instructions: " + recipesList.get(0).getTitle());
                                 adapter.notifyDataSetChanged();
                             } catch (JSONException e) {
                                 Log.e(TAG, "JSON exception hit", e);
@@ -130,5 +174,4 @@ public class RecipeListActivity extends AppCompatActivity {
                     });
         }
     }
-
 }

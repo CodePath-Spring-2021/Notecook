@@ -2,4 +2,5 @@
     <string name="app_name">Notecook</string>
     <string name="type_in_your_comma_separated_list_of_available_ingredients">Type in your comma-separated list of available ingredients.</string>
     <string name="message">See posts by other users like you!</string>
+    <string name="dummy_string">Detailed view coming soon!</string>
 </resources>

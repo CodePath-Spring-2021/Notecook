@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.PopupMenu;
 
 import com.example.notecook.Fragments.CreateFragment;
+import com.example.notecook.Fragments.DetailFragment;
 import com.example.notecook.Fragments.HomeFragment;
 import com.example.notecook.Fragments.ProfileFragment;
 import com.example.notecook.Fragments.TakePictureFragment;

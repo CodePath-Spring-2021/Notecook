@@ -21,11 +21,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.codepath.asynchttpclient.RequestParams;
 import com.example.notecook.R;
-import com.example.notecook.RecipeListActivity;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
@@ -110,9 +108,11 @@ public class TakePictureFragment extends Fragment {
                 ingredientsList = getImageText(photoFile);
                 Log.i(TAG, "ingredients List: " + ingredientsList);
                 Toast.makeText(getContext(), ingredientsList, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), RecipeListActivity.class);
-                intent.putExtra("ingredientsList", ingredientsList);
-                startActivity(intent);
+                Bundle bundle = new Bundle();
+                bundle.putString("ingredientsList", ingredientsList);
+                RecipeListFragment secFragment = new RecipeListFragment();
+                secFragment.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.flContainer, secFragment).commit();
             }
         });
     }
