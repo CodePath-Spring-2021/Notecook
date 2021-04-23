@@ -28,7 +28,10 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 
 **Required Must-have Stories**
 
-- [ ] User can create a new account or log in and log out of his or her account.
+- [x] User can create a new account or log in and log out of his or her account.
+      
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/login_walkthrough.gif" width=150>
+      
 - [x] User can directly type in the ingredients or take a picture and the app will scan for listed ingredients in picture
       
   <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/findbyingredients_walkthrough.gif" width=150>
@@ -36,20 +39,21 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 - [x] Search for recipes with user's available ingredients
 - [x] Display relevant recipes involving those ingredients
 
-  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/RecipeListScreenWalkthrough.gif" width=150>
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/RecipeListFragWalkthrough.gif" width=150>
 
 - [x] User can tap a post to view recipe details (DetailActivity will be implemented in Milestone 3)
 - [ ] User can also post new recipes along with the ingredients and pictures
-- [ ] User can see other users' recipe posts
-- [ ] User can refresh the list of recipes by pulling down to refresh
+- [x] User can see other users' recipe posts
+      
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/homescreen_walkthrough.gif" width=150>
+      
+- [x] User can refresh the list of recipes by pulling down to refresh (see above for GIF)
 
 **Optional Nice-to-have Stories**
 
 - [ ] User can load more recipes once he or she reaches the bottom of the feed using infinite scrolling
-- [ ] Translate a list of ingredients or a recipe in another language 
 - [ ] Provide a list of possible ingredient substitutions
 - [ ] User can favorite recipes and view them later
-- [ ] Settings (Notifications, General, Accessibility, Display)
 
 ### 2. Screen Archetypes
 
