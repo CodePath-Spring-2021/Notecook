@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     private final int REQUEST_CODE = 20;
     private BottomNavigationView bottomNavigationView;
-    private FrameLayout flContainer;
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // Adding logo drawables to Action Bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
+        //actionBar.setLogo(R.drawable.nav_logo_whiteout);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
 
