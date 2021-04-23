@@ -49,10 +49,8 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 **Optional Nice-to-have Stories**
 
 - [ ] User can load more recipes once he or she reaches the bottom of the feed using infinite scrolling
-- [ ] Translate a list of ingredients or a recipe in another language 
 - [ ] Provide a list of possible ingredient substitutions
 - [ ] User can favorite recipes and view them later
-- [ ] Settings (Notifications, General, Accessibility, Display)
 
 ### 2. Screen Archetypes
 
