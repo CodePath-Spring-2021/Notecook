@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Recipes {
     String title;
+    String sourceUrl;
     String image;
     int readyInMinutes;
     List<String> instructions = new ArrayList<>();
@@ -21,6 +22,7 @@ public class Recipes {
         image = jsonObject.getString("image");
         readyInMinutes = jsonObject.getInt("readyInMinutes");
         author = jsonObject.getString("creditsText");
+        sourceUrl = jsonObject.getString("spoonacularSourceUrl");
         JSONArray ingredients = jsonObject.getJSONArray("extendedIngredients");
         for(int i = 0; i < ingredients.length(); i++) {
             JSONObject ingredientsObject = ingredients.getJSONObject(i);
