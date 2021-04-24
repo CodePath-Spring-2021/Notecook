@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_takepicture.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_takepicture.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_create.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_create.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_home.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_item_recipes.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/item_recipes.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_type_ingredients.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_type_ingredients.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/xml_fileprovider.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/xml/fileprovider.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/menu_menu_bottom_navigation.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/menu/menu_bottom_navigation.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/menu_menu_find_ingredient.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/menu/menu_find_ingredient.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_detail.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_detail.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_profile.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_fragment_recipe_list.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/fragment_recipe_list.xml"
+    }
+]
