@@ -1,21 +1,29 @@
 package com.example.notecook.Fragments;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.notecook.Models.Post;
-import com.example.notecook.PostsAdapter;
+import com.example.notecook.Adapters.PostsAdapter;
 import com.example.notecook.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -23,6 +31,8 @@ import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.parse.Parse.getApplicationContext;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,6 +70,20 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Changing the font of what is written on the Action Bar
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        TextView tv = new TextView(getApplicationContext());
+        Typeface typeface = ResourcesCompat.getFont(this.getContext(), R.font.euphoria_script);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        tv.setLayoutParams(lp);
+        tv.setText("Home");
+        tv.setGravity(Gravity.CENTER);
+        tv.setTextSize(40);
+        tv.setTextColor(Color.WHITE);
+        tv.setTypeface(typeface, typeface.BOLD);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(tv);
     }
 
     @Override
@@ -72,6 +96,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvPosts = view.findViewById(R.id.rvPosts);
+        rvPosts.setHasFixedSize(true);
 
         swipeContainer = view.findViewById(R.id.swipeContainer);
         // Configure the refreshing colors
@@ -130,5 +155,8 @@ public class HomeFragment extends Fragment {
                 swipeContainer.setRefreshing(false);
             }
         });
+
     }
+
+
 }

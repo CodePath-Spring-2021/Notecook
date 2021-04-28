@@ -48,6 +48,8 @@ com/facebook/stetho/R.java
  com.facebook.stetho.R$string
  com.facebook.stetho.R$style
  com.facebook.stetho.R$styleable
+com/example/notecook/Models/FavDB.java
+ com.example.notecook.Models.FavDB
 androidx/appcompat/resources/R.java
  androidx.appcompat.resources.R
  androidx.appcompat.resources.R$attr
@@ -60,6 +62,18 @@ androidx/appcompat/resources/R.java
  androidx.appcompat.resources.R$string
  androidx.appcompat.resources.R$style
  androidx.appcompat.resources.R$styleable
+androidx/palette/R.java
+ androidx.palette.R
+ androidx.palette.R$attr
+ androidx.palette.R$color
+ androidx.palette.R$dimen
+ androidx.palette.R$drawable
+ androidx.palette.R$id
+ androidx.palette.R$integer
+ androidx.palette.R$layout
+ androidx.palette.R$string
+ androidx.palette.R$style
+ androidx.palette.R$styleable
 androidx/arch/core/R.java
  androidx.arch.core.R
 androidx/fragment/R.java
@@ -94,10 +108,6 @@ androidx/asynclayoutinflater/R.java
  androidx.asynclayoutinflater.R$styleable
 com/example/notecook/Models/Recipes.java
  com.example.notecook.Models.Recipes
-com/example/notecook/RecipesAdapter.java
- com.example.notecook.RecipesAdapter
- com.example.notecook.RecipesAdapter$ViewHolder
- com.example.notecook.RecipesAdapter$ViewHolder$1
 androidx/interpolator/R.java
  androidx.interpolator.R
 androidx/core/R.java
@@ -183,6 +193,12 @@ androidx/dynamicanimation/R.java
  androidx.dynamicanimation.R$styleable
 com/example/notecook/Fragments/CreateFragment.java
  com.example.notecook.Fragments.CreateFragment
+com/example/notecook/Adapters/PostsAdapter.java
+ com.example.notecook.Adapters.PostsAdapter
+ com.example.notecook.Adapters.PostsAdapter$1
+ com.example.notecook.Adapters.PostsAdapter$ViewHolder
+ com.example.notecook.Adapters.PostsAdapter$ViewHolder$1
+ com.example.notecook.Adapters.PostsAdapter$ViewHolder$2
 androidx/media/R.java
  androidx.media.R
  androidx.media.R$attr
@@ -221,11 +237,17 @@ androidx/legacy/v4/R.java
  androidx.legacy.v4.R$string
  androidx.legacy.v4.R$style
  androidx.legacy.v4.R$styleable
+com/example/notecook/Adapters/RecipesAdapter.java
+ com.example.notecook.Adapters.RecipesAdapter
+ com.example.notecook.Adapters.RecipesAdapter$ViewHolder
+ com.example.notecook.Adapters.RecipesAdapter$ViewHolder$1
 com/example/notecook/Fragments/RecipeListFragment.java
  com.example.notecook.Fragments.RecipeListFragment
  com.example.notecook.Fragments.RecipeListFragment$1
  com.example.notecook.Fragments.RecipeListFragment$2
  com.example.notecook.Fragments.RecipeListFragment$3
+com/bumptech/glide/gifdecoder/R.java
+ com.bumptech.glide.gifdecoder.R
 com/facebook/stetho/okhttp3/R.java
  com.facebook.stetho.okhttp3.R
  com.facebook.stetho.okhttp3.R$anim
@@ -240,8 +262,6 @@ com/facebook/stetho/okhttp3/R.java
  com.facebook.stetho.okhttp3.R$string
  com.facebook.stetho.okhttp3.R$style
  com.facebook.stetho.okhttp3.R$styleable
-com/bumptech/glide/gifdecoder/R.java
- com.bumptech.glide.gifdecoder.R
 androidx/cursoradapter/R.java
  androidx.cursoradapter.R
 androidx/cardview/R.java
@@ -251,18 +271,6 @@ androidx/cardview/R.java
  androidx.cardview.R$dimen
  androidx.cardview.R$style
  androidx.cardview.R$styleable
-androidx/swiperefreshlayout/R.java
- androidx.swiperefreshlayout.R
- androidx.swiperefreshlayout.R$attr
- androidx.swiperefreshlayout.R$color
- androidx.swiperefreshlayout.R$dimen
- androidx.swiperefreshlayout.R$drawable
- androidx.swiperefreshlayout.R$id
- androidx.swiperefreshlayout.R$integer
- androidx.swiperefreshlayout.R$layout
- androidx.swiperefreshlayout.R$string
- androidx.swiperefreshlayout.R$style
- androidx.swiperefreshlayout.R$styleable
 androidx/coordinatorlayout/R.java
  androidx.coordinatorlayout.R
  androidx.coordinatorlayout.R$attr
@@ -275,8 +283,18 @@ androidx/coordinatorlayout/R.java
  androidx.coordinatorlayout.R$string
  androidx.coordinatorlayout.R$style
  androidx.coordinatorlayout.R$styleable
-androidx/lifecycle/livedata/R.java
- androidx.lifecycle.livedata.R
+androidx/swiperefreshlayout/R.java
+ androidx.swiperefreshlayout.R
+ androidx.swiperefreshlayout.R$attr
+ androidx.swiperefreshlayout.R$color
+ androidx.swiperefreshlayout.R$dimen
+ androidx.swiperefreshlayout.R$drawable
+ androidx.swiperefreshlayout.R$id
+ androidx.swiperefreshlayout.R$integer
+ androidx.swiperefreshlayout.R$layout
+ androidx.swiperefreshlayout.R$string
+ androidx.swiperefreshlayout.R$style
+ androidx.swiperefreshlayout.R$styleable
 androidx/appcompat/R.java
  androidx.appcompat.R
  androidx.appcompat.R$anim
@@ -292,15 +310,11 @@ androidx/appcompat/R.java
  androidx.appcompat.R$string
  androidx.appcompat.R$style
  androidx.appcompat.R$styleable
-com/example/notecook/PostsAdapter.java
- com.example.notecook.PostsAdapter
- com.example.notecook.PostsAdapter$ViewHolder
- com.example.notecook.PostsAdapter$ViewHolder$1
+androidx/lifecycle/livedata/R.java
+ androidx.lifecycle.livedata.R
 com/example/notecook/Fragments/TypeIngredientsFragment.java
  com.example.notecook.Fragments.TypeIngredientsFragment
  com.example.notecook.Fragments.TypeIngredientsFragment$1
-androidx/lifecycle/R.java
- androidx.lifecycle.R
 androidx/legacy/coreui/R.java
  androidx.legacy.coreui.R
  androidx.legacy.coreui.R$attr
@@ -313,6 +327,8 @@ androidx/legacy/coreui/R.java
  androidx.legacy.coreui.R$string
  androidx.legacy.coreui.R$style
  androidx.legacy.coreui.R$styleable
+androidx/lifecycle/R.java
+ androidx.lifecycle.R
 androidx/documentfile/R.java
  androidx.documentfile.R
 com/example/notecook/BuildConfig.java
@@ -333,11 +349,13 @@ com/example/notecook/R.java
  com.example.notecook.R
  com.example.notecook.R$anim
  com.example.notecook.R$animator
+ com.example.notecook.R$array
  com.example.notecook.R$attr
  com.example.notecook.R$bool
  com.example.notecook.R$color
  com.example.notecook.R$dimen
  com.example.notecook.R$drawable
+ com.example.notecook.R$font
  com.example.notecook.R$id
  com.example.notecook.R$integer
  com.example.notecook.R$interpolator
@@ -453,6 +471,10 @@ com/google/android/gms/R.java
  com.google.android.gms.R$styleable
 androidx/localbroadcastmanager/R.java
  androidx.localbroadcastmanager.R
+com/example/notecook/Adapters/FavAdapter.java
+ com.example.notecook.Adapters.FavAdapter
+ com.example.notecook.Adapters.FavAdapter$ViewHolder
+ com.example.notecook.Adapters.FavAdapter$ViewHolder$1
 com/google/android/gms/tasks/R.java
  com.google.android.gms.tasks.R
 com/example/notecook/MainActivity.java
@@ -471,6 +493,8 @@ com/parse/R.java
  com.parse.R$string
  com.parse.R$style
  com.parse.R$styleable
+com/example/notecook/Models/Fav.java
+ com.example.notecook.Models.Fav
 com/google/android/gms/vision/R.java
  com.google.android.gms.vision.R
 com/example/notecook/Fragments/ProfileFragment.java

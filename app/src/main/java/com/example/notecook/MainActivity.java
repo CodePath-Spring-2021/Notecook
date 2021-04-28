@@ -33,13 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        // Adding logo drawables to Action Bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        //actionBar.setLogo(R.drawable.nav_logo_whiteout);
-        actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(false);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

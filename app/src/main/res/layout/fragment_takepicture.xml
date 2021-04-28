@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:layout_marginBottom="100dp"
+    android:background="#FFFADD"
     android:orientation="vertical"
     tools:context=".Fragments.TakePictureFragment">
 

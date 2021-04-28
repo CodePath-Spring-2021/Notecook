@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="6dp"
+    android:background="#FFFADD"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tvMessage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/message"
-        android:textSize="20sp" />
+        android:id="@+id/tvUsername"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="18dp"
+        tools:text="username" />
+
+    <TextView
+        android:id="@+id/tvFavorites"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogout"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:text="Favorites" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
-        android:text="Logout" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="18dp"
+        android:text="LOGOUT" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvFavorites"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:clipToPadding="false"
+        android:padding="10dp"
+        android:paddingBottom="?attr/actionBarSize" />
 
 </RelativeLayout>

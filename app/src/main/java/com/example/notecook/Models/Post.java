@@ -1,21 +1,52 @@
 package com.example.notecook.Models;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.example.notecook.R;
 import com.parse.ParseClassName;
+import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import org.apache.commons.io.output.ByteArrayOutputStream;
+
+import java.io.IOException;
 import java.util.Date;
 
 @ParseClassName("Post")
 public class Post extends ParseObject {
-    public static final String KEY_TITLE= "title";
-    public static final String KEY_IMAGE = "image";
+    public String KEY_TITLE= "title";
+    public String KEY_IMAGE = "image";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_AT = "createdAt";
-    public static final String KEY_TIME = "readyInMinutes";
-    public static final String KEY_INGREDIENTSLIST = "ingredientsList";
-    public static final String KEY_INSTRUCTIONS = "instructions";
+    public String KEY_TIME = "readyInMinutes";
+    //public String KEY_ID = "objectId";
+    public String KEY_INGREDIENTSLIST = "ingredientsList";
+    public String KEY_INSTRUCTIONS = "instructions";
+    public String KEY_FAVSTATUS = "favStatus";
+
+    public Post() {
+    }
+
+    public byte[] getImageResource() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        Bitmap bit = null;
+        try {
+            bit = BitmapFactory.decodeFile(this.getImage().getFile().getPath());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        bit.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
+        try {
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        byte[] imageInByte = outputStream.toByteArray();
+        return imageInByte;
+    }
 
     public String getRecipeTitle() {
         return getString(KEY_TITLE);
@@ -48,5 +79,15 @@ public class Post extends ParseObject {
     public String getRecipeInstructions() { return KEY_INSTRUCTIONS; }
 
     public void setRecipeInstructions(String instructions) { put(KEY_INSTRUCTIONS, instructions);    }
+
+    public String getKEY_ID() { return getObjectId(); }
+
+    public void setFavStatus(String favStatus) {
+        put(KEY_FAVSTATUS, favStatus);
+    }
+
+    public String getFavStatus() {
+        return getString(KEY_FAVSTATUS);
+    }
 }
 

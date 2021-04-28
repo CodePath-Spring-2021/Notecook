@@ -3,6 +3,8 @@ package com.example.notecook.Fragments;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,16 +12,22 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.codepath.asynchttpclient.RequestParams;
@@ -31,6 +39,7 @@ import com.google.android.gms.vision.text.TextRecognizer;
 import java.io.File;
 
 import static android.app.Activity.RESULT_OK;
+import static com.parse.Parse.getApplicationContext;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,6 +79,19 @@ public class TakePictureFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Changing the font of what is written on the Action Bar
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        TextView tv = new TextView(getApplicationContext());
+        Typeface typeface = ResourcesCompat.getFont(this.getContext(), R.font.euphoria_script);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        tv.setLayoutParams(lp);
+        tv.setText("Find a Recipe");
+        tv.setGravity(Gravity.CENTER);
+        tv.setTextSize(40);
+        tv.setTextColor(Color.WHITE);
+        tv.setTypeface(typeface, typeface.BOLD);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(tv);
 
     }
 
