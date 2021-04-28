@@ -51,9 +51,12 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 
 **Optional Nice-to-have Stories**
 
+- [x] User can favorite recipes and view them later
+    
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/favorites_walkthrough.gif" width=150>
+    
 - [ ] User can load more recipes once he or she reaches the bottom of the feed using infinite scrolling
 - [ ] Provide a list of possible ingredient substitutions
-- [ ] User can favorite recipes and view them later
 
 ### 2. Screen Archetypes
 
