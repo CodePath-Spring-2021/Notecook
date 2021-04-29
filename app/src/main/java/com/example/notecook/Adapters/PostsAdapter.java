@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,8 @@ import com.example.notecook.Models.Post;
 import com.example.notecook.R;
 import com.parse.ParseFile;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
@@ -37,6 +40,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     protected ImageView ivImage;
     protected TextView tvRecipeTitle;
     protected TextView tvAuthor;
+    public static final int KEY_POST = 20;
 
     public PostsAdapter(Context context, List<Post> posts) {
         this.context = context;
@@ -169,6 +173,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 public void onClick(View v) {
                     AppCompatActivity activity = (AppCompatActivity) context;
                     Fragment detailFrag = new DetailFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("key", KEY_POST);
+                    bundle.putParcelable("post", Parcels.wrap(post));
+                    detailFrag.setArguments(bundle);
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, detailFrag).addToBackStack(null).commit();
                 }
             });

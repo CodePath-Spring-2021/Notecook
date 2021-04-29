@@ -150,32 +150,8 @@ public class RecipeListFragment extends Fragment {
     }
 
     protected void getRecipes(String API_KEY) {
-        List<String> stepsForOneRecipe = new ArrayList<>();
         for(int i = 0; i < recipeIdList.size(); i++) {
             params.put("apiKey", API_KEY);
-            client.get("https://api.spoonacular.com/recipes/" + recipeIdList.get(i) + "/analyzedInstructions",
-                    params, new JsonHttpResponseHandler() {
-                        @Override
-                        public void onSuccess(int i, Headers headers, JSON json) {
-                            Log.i(TAG, "Successful call for instructions!");
-                            JSONArray jsonArray = json.jsonArray;
-                            try {
-                                JSONObject recipe = jsonArray.getJSONObject(0);
-                                JSONArray stepsArray = recipe.getJSONArray("steps");
-                                for(int j = 0; j < stepsArray.length(); j++) {
-                                    stepsForOneRecipe.add(stepsArray.getJSONObject(j).getString("step"));
-                                }
-                            } catch (JSONException e) {
-                                Log.e(TAG, "JSON exception hit", e);
-                                e.printStackTrace();
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(int i, Headers headers, String s, Throwable throwable) {
-                            Log.e(TAG, "Fail call" + s, throwable);
-                        }
-                    });
             client.get("https://api.spoonacular.com/recipes/" + recipeIdList.get(i) + "/information"
                     , params, new JsonHttpResponseHandler() {
                         @Override
@@ -183,7 +159,7 @@ public class RecipeListFragment extends Fragment {
                             Log.i(TAG, "Successful call for recipes!");
                             JSONObject jsonObject = json.jsonObject;
                             try {
-                                recipesList.addAll(Recipes.RecipeList(jsonObject, stepsForOneRecipe));
+                                recipesList.addAll(Recipes.RecipeList(jsonObject));
                                 adapter.notifyDataSetChanged();
                             } catch (JSONException e) {
                                 Log.e(TAG, "JSON exception hit", e);

@@ -1835,6 +1835,7 @@ id bottom
 id bottomNavigation
 id bounce
 id btnCaptureImage
+id btnFavorite
 id btnLogin
 id btnSearch
 id btnSignUp
@@ -1957,6 +1958,7 @@ id inward
 id italic
 id item_touch_helper_previous_elevation
 id ivImage
+id ivPicture
 id ivPostImage
 id jumpToEnd
 id jumpToStart
@@ -2070,6 +2072,7 @@ id rlRecipeContainer
 id rounded
 id row_index_key
 id rvFavs
+id rvList
 id rvPosts
 id rvRecipe
 id save_non_transition_alpha
@@ -2176,13 +2179,18 @@ id transition_transform
 id triangle
 id tvAuthor
 id tvCookTime
-id tvDummyString
+id tvCreator
+id tvDummy
 id tvFavorites
+id tvIngredients
 id tvInstructions
 id tvMessage
+id tvName
 id tvRecipeTitle
+id tvSteps
 id tvTakePictureText1
 id tvTakePictureText2
+id tvTime
 id tvTitle
 id tvUsername
 id unchecked
@@ -2285,6 +2293,7 @@ layout fragment_recipe_list
 layout fragment_takepicture
 layout fragment_type_ingredients
 layout item_fav
+layout item_list
 layout item_post
 layout item_recipes
 layout material_chip_input_combo

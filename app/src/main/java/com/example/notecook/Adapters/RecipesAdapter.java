@@ -1,6 +1,7 @@
 package com.example.notecook.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,12 +20,15 @@ import com.example.notecook.Fragments.DetailFragment;
 import com.example.notecook.Models.Recipes;
 import com.example.notecook.R;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder>{
 
     Context context;
     List<Recipes> recipe;
+    public static final int KEY_RECIPES = 10;
 
     public RecipesAdapter(Context context, List<Recipes> recipe) {
         this.context = context;
@@ -53,6 +58,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         TextView tvTitle;
         TextView tvCookTime;
         ImageView ivImage;
+        AppCompatButton btnFavorite;
         RelativeLayout rlRecipeContainer;
 
         public ViewHolder(@NonNull View itemView) {
@@ -61,13 +67,14 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             tvCookTime = itemView.findViewById(R.id.tvCookTime);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             ivImage = itemView.findViewById(R.id.ivImage);
+            btnFavorite = itemView.findViewById(R.id.btnFavorite);
             rlRecipeContainer = itemView.findViewById(R.id.rlRecipeContainer);
         }
 
         public void bind(Recipes recipes) {
             tvTitle.setText(recipes.getTitle());
-            tvCookTime.setText(Integer.toString(recipes.getReadyInMinutes()) + "min");
-            if(ivImage != null) {
+            tvCookTime.setText(Integer.toString(recipes.getReadyInMinutes()) + "m");
+            if(recipes.getImage() != null) {
                 Glide.with(context).load(recipes.getImage()).into(ivImage);
             }
             rlRecipeContainer.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +82,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                 public void onClick(View v) {
                     AppCompatActivity activity = (AppCompatActivity) context;
                     Fragment detailFrag = new DetailFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("key", KEY_RECIPES);
+                    bundle.putParcelable("recipe", Parcels.wrap(recipes));
+                    detailFrag.setArguments(bundle);
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, detailFrag).addToBackStack(null).commit();
                 }
             });

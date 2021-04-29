@@ -23,7 +23,7 @@ public class Post extends ParseObject {
     public static final String KEY_CREATED_AT = "createdAt";
     public String KEY_TIME = "readyInMinutes";
     //public String KEY_ID = "objectId";
-    public String KEY_INGREDIENTSLIST = "ingredientsList";
+    public String KEY_INGREDIENTSLIST = "ingredients";
     public String KEY_INSTRUCTIONS = "instructions";
     public String KEY_FAVSTATUS = "favStatus";
 
@@ -72,11 +72,11 @@ public class Post extends ParseObject {
 
     public void setCookTime(String time) { put(KEY_TIME, time);    }
 
-    public String getIngredientsList() { return KEY_INGREDIENTSLIST; }
+    public String getIngredientsList() { return getString(KEY_INGREDIENTSLIST); }
 
     public void setIngredientsList(String ingredientsList) { put(KEY_INGREDIENTSLIST, ingredientsList);    }
 
-    public String getRecipeInstructions() { return KEY_INSTRUCTIONS; }
+    public String getRecipeInstructions() { return getString(KEY_INSTRUCTIONS); }
 
     public void setRecipeInstructions(String instructions) { put(KEY_INSTRUCTIONS, instructions);    }
 
