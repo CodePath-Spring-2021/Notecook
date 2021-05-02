@@ -37,7 +37,7 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 - [x] Display relevant recipes involving those ingredients
 - [x] User can tap a post to view recipe details
 
-  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/DetailWalkthrough.gif" width=150>
+  <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/DetailedView.gif" width=150>
 
 - [ ] User can also post new recipes along with the ingredients and pictures
 - [x] User can see other users' recipe posts
@@ -52,9 +52,6 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
     
   <img src="https://github.com/CodePath-Spring-2021/Notecook/blob/main/favorites_walkthrough.gif" width=150>
     
-- [ ] User can load more recipes once he or she reaches the bottom of the feed using infinite scrolling
-- [ ] Provide a list of possible ingredient substitutions
-
 ### 2. Screen Archetypes
 
 * Log-in/Sign-up Screen
@@ -161,6 +158,5 @@ Notecook allows you to scan or type in a list of ingredients so you can find sim
 
 | HTTP Verb | Endpoint     | Description |
 | -------- | -------- | --------    |
-| `GET` | /{id}/analyzedInstructions   | get recipe instructions for given recipeId       |
 | `GET` | /findByIngredients?ingredients={ingredientsList}   | return recipes with the given ingredientsList        |
 | `GET` | /{id}/information   | get recipe information with the given recipeId        |
