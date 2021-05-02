@@ -56,7 +56,6 @@ public class TakePictureFragment extends Fragment {
     private String ingredientsList;
     private File photoFile;
     private String photoFileName = "photo.jpg";
-    RequestParams params = new RequestParams();
 
     public TakePictureFragment() {
         // Required empty public constructor
@@ -111,7 +110,6 @@ public class TakePictureFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
-        String API_KEY = getString(R.string.API_KEY);
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +127,6 @@ public class TakePictureFragment extends Fragment {
                 }
                 ingredientsList = getImageText(photoFile);
                 Log.i(TAG, "ingredients List: " + ingredientsList);
-                Toast.makeText(getContext(), ingredientsList, Toast.LENGTH_SHORT).show();
                 Bundle bundle = new Bundle();
                 bundle.putString("ingredientsList", ingredientsList);
                 RecipeListFragment secFragment = new RecipeListFragment();

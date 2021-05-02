@@ -74,6 +74,12 @@ androidx/palette/R.java
  androidx.palette.R$string
  androidx.palette.R$style
  androidx.palette.R$styleable
+com/example/notecook/Adapters/DetailPostAdapter.java
+ com.example.notecook.Adapters.DetailPostAdapter
+ com.example.notecook.Adapters.DetailPostAdapter$HeaderViewHolder
+ com.example.notecook.Adapters.DetailPostAdapter$IngredientsViewHolder
+ com.example.notecook.Adapters.DetailPostAdapter$MiddleViewHolder
+ com.example.notecook.Adapters.DetailPostAdapter$StepsViewHolder
 androidx/arch/core/R.java
  androidx.arch.core.R
 androidx/fragment/R.java
@@ -412,30 +418,8 @@ com/google/android/material/R.java
  com.google.android.material.R$xml
 androidx/annotation/experimental/R.java
  androidx.annotation.experimental.R
-androidx/viewpager2/R.java
- androidx.viewpager2.R
- androidx.viewpager2.R$attr
- androidx.viewpager2.R$color
- androidx.viewpager2.R$dimen
- androidx.viewpager2.R$drawable
- androidx.viewpager2.R$id
- androidx.viewpager2.R$integer
- androidx.viewpager2.R$layout
- androidx.viewpager2.R$string
- androidx.viewpager2.R$style
- androidx.viewpager2.R$styleable
-androidx/vectordrawable/animated/R.java
- androidx.vectordrawable.animated.R
- androidx.vectordrawable.animated.R$attr
- androidx.vectordrawable.animated.R$color
- androidx.vectordrawable.animated.R$dimen
- androidx.vectordrawable.animated.R$drawable
- androidx.vectordrawable.animated.R$id
- androidx.vectordrawable.animated.R$integer
- androidx.vectordrawable.animated.R$layout
- androidx.vectordrawable.animated.R$string
- androidx.vectordrawable.animated.R$style
- androidx.vectordrawable.animated.R$styleable
+com/example/notecook/Fragments/DetailFragment.java
+ com.example.notecook.Fragments.DetailFragment
 androidx/constraintlayout/widget/R.java
  androidx.constraintlayout.widget.R
  androidx.constraintlayout.widget.R$anim
@@ -457,6 +441,12 @@ com/example/notecook/Fragments/HomeFragment.java
  com.example.notecook.Fragments.HomeFragment$2
 com/example/notecook/ParseApplication.java
  com.example.notecook.ParseApplication
+com/example/notecook/Adapters/DetailRecipeAdapter.java
+ com.example.notecook.Adapters.DetailRecipeAdapter
+ com.example.notecook.Adapters.DetailRecipeAdapter$HeaderViewHolder
+ com.example.notecook.Adapters.DetailRecipeAdapter$IngredientsViewHolder
+ com.example.notecook.Adapters.DetailRecipeAdapter$MiddleViewHolder
+ com.example.notecook.Adapters.DetailRecipeAdapter$StepsViewHolder
 androidx/slidingpanelayout/R.java
  androidx.slidingpanelayout.R
  androidx.slidingpanelayout.R$attr
@@ -523,9 +513,27 @@ com/example/notecook/Fragments/ProfileFragment.java
  com.example.notecook.Fragments.ProfileFragment$1
  com.example.notecook.Fragments.ProfileFragment$1$1
  com.example.notecook.Fragments.ProfileFragment$1$2
-com/example/notecook/Fragments/DetailFragment.java
- com.example.notecook.Fragments.DetailFragment
-com/example/notecook/Adapters/DetailAdapter.java
- com.example.notecook.Adapters.DetailAdapter
- com.example.notecook.Adapters.DetailAdapter$IngredientViewHolder
- com.example.notecook.Adapters.DetailAdapter$StepsViewHolder
+androidx/vectordrawable/animated/R.java
+ androidx.vectordrawable.animated.R
+ androidx.vectordrawable.animated.R$attr
+ androidx.vectordrawable.animated.R$color
+ androidx.vectordrawable.animated.R$dimen
+ androidx.vectordrawable.animated.R$drawable
+ androidx.vectordrawable.animated.R$id
+ androidx.vectordrawable.animated.R$integer
+ androidx.vectordrawable.animated.R$layout
+ androidx.vectordrawable.animated.R$string
+ androidx.vectordrawable.animated.R$style
+ androidx.vectordrawable.animated.R$styleable
+androidx/viewpager2/R.java
+ androidx.viewpager2.R
+ androidx.viewpager2.R$attr
+ androidx.viewpager2.R$color
+ androidx.viewpager2.R$dimen
+ androidx.viewpager2.R$drawable
+ androidx.viewpager2.R$id
+ androidx.viewpager2.R$integer
+ androidx.viewpager2.R$layout
+ androidx.viewpager2.R$string
+ androidx.viewpager2.R$style
+ androidx.viewpager2.R$styleable

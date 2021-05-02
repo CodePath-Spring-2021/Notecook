@@ -596,6 +596,10 @@
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_item_middle.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/item_middle.xml"
+    },
+    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable_ic_baseline_person_24.xml.flat",
         "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/drawable/ic_baseline_person_24.xml"
     },
@@ -1170,10 +1174,6 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/layout/abc_action_mode_bar.xml"
-    },
-    {
-        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_item_list.xml.flat",
-        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/item_list.xml"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -1850,6 +1850,10 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/color_material_cursor_color.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/color/material_cursor_color.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_item_header.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/item_header.xml"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
