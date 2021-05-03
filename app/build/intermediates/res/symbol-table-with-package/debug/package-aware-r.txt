@@ -1960,6 +1960,7 @@ id inward
 id italic
 id item_touch_helper_previous_elevation
 id ivImage
+id ivPhoto
 id ivPicture
 id ivPostImage
 id jumpToEnd
@@ -2186,13 +2187,13 @@ id tvCreator
 id tvDummy
 id tvFavorites
 id tvInstructions
+id tvList
 id tvMessage
 id tvName
 id tvPrompt
 id tvRecipeTitle
 id tvTakePictureText1
 id tvTakePictureText2
-id tvTime
 id tvTitle
 id tvUsername
 id unchecked
@@ -2296,6 +2297,7 @@ layout fragment_takepicture
 layout fragment_type_ingredients
 layout item_fav
 layout item_header
+layout item_list
 layout item_middle
 layout item_post
 layout item_recipes

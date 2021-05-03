@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Notecook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\521dff0fbebf142f3799fc838bdf61b4\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\fb3e89e6963bf766e32fa259d5c4661c\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",

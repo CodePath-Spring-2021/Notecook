@@ -128,12 +128,12 @@
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/color/mtrl_btn_text_btn_ripple_color.xml"
     },
     {
-        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable_ic_clock_black_24dp.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/drawable/ic_clock_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/color_material_timepicker_modebutton_tint.xml.flat",
@@ -1174,6 +1174,10 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_abc_action_mode_bar.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_item_list.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/layout/item_list.xml"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",

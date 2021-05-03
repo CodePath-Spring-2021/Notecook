@@ -45,7 +45,7 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
         if(viewType == TYPE_HEADER) {
             View viewHeader = LayoutInflater.from(context).inflate(R.layout.item_header, parent, false);
             return new HeaderViewHolder(viewHeader);
@@ -100,7 +100,6 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         TextView tvName;
         TextView tvCreator;
-        TextView tvTime;
         ImageView ivPicture;
 
         public HeaderViewHolder(@NonNull View itemView) {
@@ -108,20 +107,16 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
             tvName = itemView.findViewById(R.id.tvName);
             tvCreator = itemView.findViewById(R.id.tvCreator);
-            tvTime = itemView.findViewById(R.id.tvTime);
             ivPicture = itemView.findViewById(R.id.ivPicture);
         }
 
         public void bind(Post recipePost) {
             tvName.setText(recipePost.getRecipeTitle());
-            tvCreator.setText(recipePost.getUser().getUsername() + ",");
-            tvTime.setText(recipePost.getCookTime() + " min");
+            tvCreator.setText(recipePost.getUser().getUsername() + ", " + recipePost.getCookTime() + " min");
             if(recipePost.getImage() != null) {
                 int radius = 30;
                 int margin = 10;
                 Glide.with(context).load(recipePost.getImage().getUrl()).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
-            }else{
-                System.out.print("NO PICTURE TO SHOW");
             }
         }
     }
@@ -133,7 +128,7 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         public IngredientsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvIngredients = itemView.findViewById(android.R.id.text1);
+            tvIngredients = itemView.findViewById(R.id.tvList);
         }
 
         public void bind(String ingredient) {
@@ -161,7 +156,7 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         public StepsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvSteps = itemView.findViewById(android.R.id.text1);
+            tvSteps = itemView.findViewById(R.id.tvList);
         }
 
         public void bind(String instruction) {

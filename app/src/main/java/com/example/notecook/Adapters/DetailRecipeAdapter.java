@@ -45,7 +45,7 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
         if(viewType == TYPE_HEADER) {
             View viewHeader = LayoutInflater.from(context).inflate(R.layout.item_header, parent, false);
             return new HeaderViewHolder(viewHeader);
@@ -100,7 +100,6 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         TextView tvName;
         TextView tvCreator;
-        TextView tvTime;
         ImageView ivPicture;
 
         public HeaderViewHolder(@NonNull View itemView) {
@@ -108,14 +107,12 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             tvName = itemView.findViewById(R.id.tvName);
             tvCreator = itemView.findViewById(R.id.tvCreator);
-            tvTime = itemView.findViewById(R.id.tvTime);
             ivPicture = itemView.findViewById(R.id.ivPicture);
         }
 
         public void bind(Recipes recipes) {
             tvName.setText(recipes.getTitle());
-            tvCreator.setText(recipes.getAuthor() + ",");
-            tvTime.setText(Integer.toString(recipes.getReadyInMinutes()) + " min");
+            tvCreator.setText(recipes.getAuthor() + ", " + Integer.toString(recipes.getReadyInMinutes()) + " min");
             int radius = 30;
             int margin = 10;
             if(recipes.getImage() != null) {
@@ -133,7 +130,7 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public IngredientsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvIngredients = itemView.findViewById(android.R.id.text1);
+            tvIngredients = itemView.findViewById(R.id.tvList);
         }
 
         public void bind(String ingredient) {
@@ -161,7 +158,7 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public StepsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvSteps = itemView.findViewById(android.R.id.text1);
+            tvSteps = itemView.findViewById(R.id.tvList);
         }
 
         public void bind(String step) {

@@ -57,7 +57,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitle;
-        ImageView ivImage;
+        ImageView ivPhoto;
         AppCompatButton btnFavorite;
         CardView rlRecipeContainer;
 
@@ -65,7 +65,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.tvTitle);
-            ivImage = itemView.findViewById(R.id.ivImage);
+            ivPhoto = itemView.findViewById(R.id.ivPhoto);
             btnFavorite = itemView.findViewById(R.id.btnFavorite);
             rlRecipeContainer = itemView.findViewById(R.id.rlRecipeContainer);
         }
@@ -73,7 +73,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         public void bind(Recipes recipes) {
             tvTitle.setText(recipes.getTitle() + " - " + Integer.toString(recipes.getReadyInMinutes()) + "m");
             if(recipes.getImage() != null) {
-                Glide.with(context).load(recipes.getImage()).into(ivImage);
+                Glide.with(context).load(recipes.getImage()).into(ivPhoto);
             }
             rlRecipeContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
