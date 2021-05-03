@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,15 +57,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitle;
-        TextView tvCookTime;
         ImageView ivImage;
         AppCompatButton btnFavorite;
-        RelativeLayout rlRecipeContainer;
+        CardView rlRecipeContainer;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvCookTime = itemView.findViewById(R.id.tvCookTime);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             ivImage = itemView.findViewById(R.id.ivImage);
             btnFavorite = itemView.findViewById(R.id.btnFavorite);
@@ -72,8 +71,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         }
 
         public void bind(Recipes recipes) {
-            tvTitle.setText(recipes.getTitle());
-            tvCookTime.setText(Integer.toString(recipes.getReadyInMinutes()) + "m");
+            tvTitle.setText(recipes.getTitle() + " - " + Integer.toString(recipes.getReadyInMinutes()) + "m");
             if(recipes.getImage() != null) {
                 Glide.with(context).load(recipes.getImage()).into(ivImage);
             }

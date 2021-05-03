@@ -430,6 +430,8 @@ attr framePosition
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
 attr goIcon
+attr gpuimage_show_loading
+attr gpuimage_surface_type
 attr haloColor
 attr haloRadius
 attr headerLayout
@@ -2131,6 +2133,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id surface_view
 id swipeContainer
 id tabMode
 id tag_accessibility_actions
@@ -2161,6 +2164,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id texture_view
 id time
 id title
 id titleDividerNoCustom
@@ -2178,7 +2182,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvAuthor
-id tvCookTime
 id tvCreator
 id tvDummy
 id tvFavorites
@@ -3267,6 +3270,7 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GPUImageView gpuimage_show_loading gpuimage_surface_type
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc brightness contrast crossfade overlay round roundPercent saturation warmth

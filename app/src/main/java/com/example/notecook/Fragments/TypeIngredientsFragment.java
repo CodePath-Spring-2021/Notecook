@@ -3,6 +3,8 @@ package com.example.notecook.Fragments;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,6 +92,36 @@ public class TypeIngredientsFragment extends Fragment {
 
         etIngredients = view.findViewById(R.id.etIngredients);
         btnSearch = view.findViewById(R.id.btnSearch);
+
+        // Set typing listener on EditText
+        etIngredients.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Fires right before text is changing
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Fires right as the text is being changed (even supplies the range of text)
+                int length = etIngredients.length();
+                if (length == 0) {
+                    btnSearch.setEnabled(false);
+                    btnSearch.setBackgroundColor(Color.LTGRAY);
+                    btnSearch.setTextColor(Color.GRAY);
+                }
+                else {
+                    // when list is not empty
+                    btnSearch.setEnabled(true);
+                    btnSearch.setBackgroundColor(getResources().getColor(R.color.green_200));
+                    btnSearch.setTextColor(Color.WHITE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Fires right after the text has changed
+            }
+        });
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

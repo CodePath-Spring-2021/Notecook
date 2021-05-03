@@ -33,10 +33,12 @@
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="#ffcccccc"
+        android:layout_marginTop="5dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Search"
+        android:textColor="#FF888888"
         android:textSize="18sp" />
 
 </LinearLayout>

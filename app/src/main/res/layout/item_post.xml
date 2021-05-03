@@ -28,6 +28,7 @@
         android:layout_gravity="bottom"
         android:layout_marginStart="18dp"
         android:layout_marginBottom="38dp"
+        android:paddingRight="50dp"
         android:textColor="#fff"
         tools:text="Title" />
 

@@ -15,9 +15,9 @@ public final class R {
         public static final int buttonSize = 0x7f040072;
         public static final int circleCrop = 0x7f04009e;
         public static final int colorScheme = 0x7f0400c6;
-        public static final int imageAspectRatio = 0x7f040195;
-        public static final int imageAspectRatioAdjust = 0x7f040196;
-        public static final int scopeUris = 0x7f04029e;
+        public static final int imageAspectRatio = 0x7f040197;
+        public static final int imageAspectRatioAdjust = 0x7f040198;
+        public static final int scopeUris = 0x7f0402a0;
     }
     public static final class color {
         private color() {}
@@ -73,10 +73,10 @@ public final class R {
         public static final int radio = 0x7f0a0140;
         public static final int slide = 0x7f0a016d;
         public static final int standard = 0x7f0a017c;
-        public static final int text = 0x7f0a0196;
-        public static final int text2 = 0x7f0a0197;
-        public static final int wide = 0x7f0a01cc;
-        public static final int wrap_content = 0x7f0a01d0;
+        public static final int text = 0x7f0a0197;
+        public static final int text2 = 0x7f0a0198;
+        public static final int wide = 0x7f0a01cd;
+        public static final int wrap_content = 0x7f0a01d1;
     }
     public static final class integer {
         private integer() {}
@@ -107,11 +107,11 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] LoadingImageView = { 0x7f04009e, 0x7f040195, 0x7f040196 };
+        public static final int[] LoadingImageView = { 0x7f04009e, 0x7f040197, 0x7f040198 };
         public static final int LoadingImageView_circleCrop = 0;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 2;
-        public static final int[] SignInButton = { 0x7f040072, 0x7f0400c6, 0x7f04029e };
+        public static final int[] SignInButton = { 0x7f040072, 0x7f0400c6, 0x7f0402a0 };
         public static final int SignInButton_buttonSize = 0;
         public static final int SignInButton_colorScheme = 1;
         public static final int SignInButton_scopeUris = 2;
