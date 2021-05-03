@@ -14,11 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.example.notecook.Models.Post;
 import com.example.notecook.R;
 
 import java.util.Arrays;
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
@@ -111,10 +114,12 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         public void bind(Post recipePost) {
             tvName.setText(recipePost.getRecipeTitle());
-            tvCreator.setText(recipePost.getUser().getUsername());
-            tvTime.setText(recipePost.getCookTime() + "min");
+            tvCreator.setText(recipePost.getUser().getUsername() + ",");
+            tvTime.setText(recipePost.getCookTime() + " min");
             if(recipePost.getImage() != null) {
-                Glide.with(context).load(recipePost.getImage().getUrl()).into(ivPicture);
+                int radius = 30;
+                int margin = 10;
+                Glide.with(context).load(recipePost.getImage().getUrl()).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
             }else{
                 System.out.print("NO PICTURE TO SHOW");
             }

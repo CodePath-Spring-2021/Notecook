@@ -16,7 +16,7 @@
         android:ems="10"
         android:text="TAKE A PICTURE"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <TextView
         android:id="@+id/tvTakePictureText2"
@@ -24,9 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:text="of ingredients list"
+        android:text="of your ingredients list"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <ImageView
         android:id="@+id/ivPostImage"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="@color/green_500"
         android:text="CAPTURE IMAGE"
         android:textSize="18sp" />
 
@@ -49,7 +49,8 @@
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:backgroundTint="#2196F3"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/green_200"
         android:text="FIND RECIPES"
         android:textSize="18sp" />
 

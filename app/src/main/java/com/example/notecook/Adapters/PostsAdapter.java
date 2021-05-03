@@ -165,8 +165,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
 
-            tvAuthor.setText(post.getUser().getUsername());
             tvRecipeTitle.setText(post.getRecipeTitle() + " - " + post.getCookTime() + "m");
+            tvAuthor.setText(post.getUser().getUsername());
 
             rlPostContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
