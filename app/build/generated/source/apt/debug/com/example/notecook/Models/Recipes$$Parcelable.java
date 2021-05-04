@@ -50,7 +50,6 @@ public class Recipes$$Parcelable
             parcel$$1 .writeInt(identity$$0);
         } else {
             parcel$$1 .writeInt(identityMap$$0 .put(recipes$$1));
-            parcel$$1 .writeString(recipes$$1 .sourceUrl);
             parcel$$1 .writeInt(recipes$$1 .readyInMinutes);
             parcel$$1 .writeString(recipes$$1 .image);
             if (recipes$$1 .instructions == null) {
@@ -71,6 +70,7 @@ public class Recipes$$Parcelable
             }
             parcel$$1 .writeString(recipes$$1 .author);
             parcel$$1 .writeString(recipes$$1 .title);
+            parcel$$1 .writeInt(recipes$$1 .recipeId);
         }
     }
 
@@ -96,7 +96,6 @@ public class Recipes$$Parcelable
             int reservation$$0 = identityMap$$1 .reserve();
             recipes$$4 = new com.example.notecook.Models.Recipes();
             identityMap$$1 .put(reservation$$0, recipes$$4);
-            recipes$$4 .sourceUrl = parcel$$3 .readString();
             recipes$$4 .readyInMinutes = parcel$$3 .readInt();
             recipes$$4 .image = parcel$$3 .readString();
             int int$$0 = parcel$$3 .readInt();
@@ -123,6 +122,7 @@ public class Recipes$$Parcelable
             recipes$$4 .ingredientName = list$$1;
             recipes$$4 .author = parcel$$3 .readString();
             recipes$$4 .title = parcel$$3 .readString();
+            recipes$$4 .recipeId = parcel$$3 .readInt();
             com.example.notecook.Models.Recipes recipes$$3 = recipes$$4;
             identityMap$$1 .put(identity$$1, recipes$$3);
             return recipes$$3;
