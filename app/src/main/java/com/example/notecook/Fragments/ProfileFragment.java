@@ -1,5 +1,6 @@
 package com.example.notecook.Fragments;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -18,9 +19,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.notecook.Adapters.DetailPostAdapter;
+import com.example.notecook.Adapters.DetailRecipeAdapter;
 import com.example.notecook.Adapters.FavAdapter;
 import com.example.notecook.Models.Fav;
 import com.example.notecook.Models.FavDB;
+import com.example.notecook.Models.Post;
+import com.example.notecook.Models.Recipes;
 import com.example.notecook.R;
 
 import android.content.DialogInterface;
@@ -36,6 +41,8 @@ import android.widget.TextView;
 import com.example.notecook.LoginActivity;
 import com.parse.ParseUser;
 
+import org.parceler.Parcels;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,12 +55,24 @@ import static com.parse.Parse.getApplicationContext;
  */
 public class ProfileFragment extends Fragment {
 
+    Context context;
     public static final String TAG = "ProfileFragment";
     private RecyclerView rvFavs;
     protected FavAdapter favAdapter;
     private FavDB favDB;
     private TextView tvUsername;
     protected List<Fav> favPosts = new ArrayList<>();
+    protected String recipeId;
+    Fav favItem;
+    String title;
+    String type_status;
+    String author;
+    String time;
+    String ingredientsList;
+    String instructions;
+    String fav_status;
+    Recipes recipeItem;
+    Post postItem;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -78,6 +97,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = this.getContext();
 
         // Changing the font of what is written on the Action Bar
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
@@ -144,6 +164,25 @@ public class ProfileFragment extends Fragment {
         rvFavs.setLayoutManager(layoutManager);
 
         loadData();
+
+        rvFavs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) context;
+                Fragment detailFrag = new DetailFragment();
+                Bundle bundle = new Bundle();
+                if (type_status.equals("20")) {
+                    bundle.putInt("key", Integer.parseInt(type_status));
+                    bundle.putParcelable("post", Parcels.wrap(postItem));
+                }
+                else if (type_status.equals("10")) {
+                    bundle.putInt("key", Integer.parseInt(type_status));
+                    bundle.putParcelable("post", Parcels.wrap(recipeItem));
+                }
+                detailFrag.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, detailFrag).addToBackStack(null).commit();
+            }
+        });
     }
 
     private void loadData() {
@@ -154,10 +193,24 @@ public class ProfileFragment extends Fragment {
         Cursor cursor = favDB.select_all_favorite_list();
         try {
             while (cursor.moveToNext()) {
-                String title = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE));
-                String id = cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID));
-                byte[] image = cursor.getBlob(cursor.getColumnIndex(FavDB.ITEM_IMAGE));
-                Fav favItem = new Fav(title, id, image);
+                title = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE));
+                author = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_AUTHOR));
+                time = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TIME));
+                ingredientsList = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_INGREDIENTS));
+                instructions = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_STEPS));
+                recipeId = cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID));
+                type_status = cursor.getString(cursor.getColumnIndex(FavDB.TYPE_STATUS));
+                fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
+                if (type_status.equals("20")) {
+                    byte[] image = cursor.getBlob(cursor.getColumnIndex(FavDB.ITEM_IMAGE));
+                    favItem = new Fav(title, recipeId, image, type_status, author, time, ingredientsList, instructions, fav_status);
+                    //recipeItem = new Recipes(title, author, image, time, instructions, ingredientsList, recipeId, fav_status);
+                }
+                else {
+                    String imageUrl = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_IMAGEURL));
+                    favItem = new Fav(title, recipeId, imageUrl, type_status, author, time, ingredientsList, instructions, fav_status);
+                    //postItem = new Post(title, author, imageUrl, time, instructions, ingredientsList, recipeId, fav_status);
+                }
                 favPosts.add(favItem);
             }
         } finally {
@@ -170,25 +223,4 @@ public class ProfileFragment extends Fragment {
 
         rvFavs.setAdapter(favAdapter);
     }
-
-    /*
-    protected void queryPosts() {
-        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
-        query.include(Post.KEY_USER);
-        query.setLimit(100);
-        query.addDescendingOrder(Post.KEY_CREATED_AT);
-        query.findInBackground(new FindCallback<Post>() {
-            @Override
-            public void done(List<Post> posts, ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "Issue with getting posts", e);
-                    return;
-                }
-                for (Post post : posts) {
-                    Log.i(TAG, "Recipe Name: " + post.getRecipeTitle() + ", username: " + post.getUser().getUsername());
-                }
-                //adapter.addAll(posts);
-            }
-        });
-    }*/
 }

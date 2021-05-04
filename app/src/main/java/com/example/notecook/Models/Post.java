@@ -2,6 +2,7 @@ package com.example.notecook.Models;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import com.example.notecook.R;
 import com.parse.ParseClassName;
@@ -13,6 +14,7 @@ import com.parse.ParseUser;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 
 @ParseClassName("Post")
@@ -30,11 +32,30 @@ public class Post extends ParseObject {
     public Post() {
     }
 
+    /*
+    public Post(String title, String author, String imageUrl, String time, String instructions, String ingredientsList, String recipeId, String fav_status) {
+        setRecipeTitle(title);
+
+        setCookTime(time);
+        setRecipeInstructions(instructions);
+        setIngredientsList(ingredientsList);
+
+        setFavStatus(fav_status);
+        this.author = author;
+        this.image = image;
+        this.instructions = Arrays.asList(instructions.split("\\r?\\n"));
+        this.ingredientName = Arrays.asList(ingredientsList.split("\\r?\\n"));;
+        this.recipeId = Integer.parseInt(recipeId);
+        this.KEY_FAVSTATUS = fav_status;
+    }
+    */
+
     public byte[] getImageResource() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         Bitmap bit = null;
         try {
             bit = BitmapFactory.decodeFile(this.getImage().getFile().getPath());
+            Log.e("Recipes/Post", this.getImage().getFile().getPath());
         } catch (ParseException e) {
             e.printStackTrace();
         }

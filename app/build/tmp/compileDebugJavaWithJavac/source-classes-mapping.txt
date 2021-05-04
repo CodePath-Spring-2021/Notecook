@@ -77,6 +77,7 @@ androidx/palette/R.java
 com/example/notecook/Adapters/DetailPostAdapter.java
  com.example.notecook.Adapters.DetailPostAdapter
  com.example.notecook.Adapters.DetailPostAdapter$HeaderViewHolder
+ com.example.notecook.Adapters.DetailPostAdapter$HeaderViewHolder$1
  com.example.notecook.Adapters.DetailPostAdapter$IngredientsViewHolder
  com.example.notecook.Adapters.DetailPostAdapter$MiddleViewHolder
  com.example.notecook.Adapters.DetailPostAdapter$StepsViewHolder
@@ -245,14 +246,17 @@ androidx/legacy/v4/R.java
  androidx.legacy.v4.R$string
  androidx.legacy.v4.R$style
  androidx.legacy.v4.R$styleable
-com/example/notecook/Fragments/RecipeListFragment.java
- com.example.notecook.Fragments.RecipeListFragment
- com.example.notecook.Fragments.RecipeListFragment$1
- com.example.notecook.Fragments.RecipeListFragment$2
 com/example/notecook/Adapters/RecipesAdapter.java
  com.example.notecook.Adapters.RecipesAdapter
  com.example.notecook.Adapters.RecipesAdapter$ViewHolder
  com.example.notecook.Adapters.RecipesAdapter$ViewHolder$1
+ com.example.notecook.Adapters.RecipesAdapter$ViewHolder$2
+com/example/notecook/Fragments/RecipeListFragment.java
+ com.example.notecook.Fragments.RecipeListFragment
+ com.example.notecook.Fragments.RecipeListFragment$1
+ com.example.notecook.Fragments.RecipeListFragment$2
+com/bumptech/glide/gifdecoder/R.java
+ com.bumptech.glide.gifdecoder.R
 com/facebook/stetho/okhttp3/R.java
  com.facebook.stetho.okhttp3.R
  com.facebook.stetho.okhttp3.R$anim
@@ -267,8 +271,6 @@ com/facebook/stetho/okhttp3/R.java
  com.facebook.stetho.okhttp3.R$string
  com.facebook.stetho.okhttp3.R$style
  com.facebook.stetho.okhttp3.R$styleable
-com/bumptech/glide/gifdecoder/R.java
- com.bumptech.glide.gifdecoder.R
 androidx/cursoradapter/R.java
  androidx.cursoradapter.R
 androidx/cardview/R.java
@@ -278,18 +280,6 @@ androidx/cardview/R.java
  androidx.cardview.R$dimen
  androidx.cardview.R$style
  androidx.cardview.R$styleable
-androidx/swiperefreshlayout/R.java
- androidx.swiperefreshlayout.R
- androidx.swiperefreshlayout.R$attr
- androidx.swiperefreshlayout.R$color
- androidx.swiperefreshlayout.R$dimen
- androidx.swiperefreshlayout.R$drawable
- androidx.swiperefreshlayout.R$id
- androidx.swiperefreshlayout.R$integer
- androidx.swiperefreshlayout.R$layout
- androidx.swiperefreshlayout.R$string
- androidx.swiperefreshlayout.R$style
- androidx.swiperefreshlayout.R$styleable
 androidx/coordinatorlayout/R.java
  androidx.coordinatorlayout.R
  androidx.coordinatorlayout.R$attr
@@ -302,8 +292,18 @@ androidx/coordinatorlayout/R.java
  androidx.coordinatorlayout.R$string
  androidx.coordinatorlayout.R$style
  androidx.coordinatorlayout.R$styleable
-androidx/lifecycle/livedata/R.java
- androidx.lifecycle.livedata.R
+androidx/swiperefreshlayout/R.java
+ androidx.swiperefreshlayout.R
+ androidx.swiperefreshlayout.R$attr
+ androidx.swiperefreshlayout.R$color
+ androidx.swiperefreshlayout.R$dimen
+ androidx.swiperefreshlayout.R$drawable
+ androidx.swiperefreshlayout.R$id
+ androidx.swiperefreshlayout.R$integer
+ androidx.swiperefreshlayout.R$layout
+ androidx.swiperefreshlayout.R$string
+ androidx.swiperefreshlayout.R$style
+ androidx.swiperefreshlayout.R$styleable
 androidx/appcompat/R.java
  androidx.appcompat.R
  androidx.appcompat.R$anim
@@ -319,12 +319,12 @@ androidx/appcompat/R.java
  androidx.appcompat.R$string
  androidx.appcompat.R$style
  androidx.appcompat.R$styleable
+androidx/lifecycle/livedata/R.java
+ androidx.lifecycle.livedata.R
 com/example/notecook/Fragments/TypeIngredientsFragment.java
  com.example.notecook.Fragments.TypeIngredientsFragment
  com.example.notecook.Fragments.TypeIngredientsFragment$1
  com.example.notecook.Fragments.TypeIngredientsFragment$2
-androidx/lifecycle/R.java
- androidx.lifecycle.R
 androidx/legacy/coreui/R.java
  androidx.legacy.coreui.R
  androidx.legacy.coreui.R$attr
@@ -337,6 +337,8 @@ androidx/legacy/coreui/R.java
  androidx.legacy.coreui.R$string
  androidx.legacy.coreui.R$style
  androidx.legacy.coreui.R$styleable
+androidx/lifecycle/R.java
+ androidx.lifecycle.R
 androidx/documentfile/R.java
  androidx.documentfile.R
 com/example/notecook/BuildConfig.java
@@ -426,8 +428,18 @@ com/google/android/material/R.java
  com.google.android.material.R$xml
 androidx/annotation/experimental/R.java
  androidx.annotation.experimental.R
-com/example/notecook/Fragments/DetailFragment.java
- com.example.notecook.Fragments.DetailFragment
+androidx/vectordrawable/animated/R.java
+ androidx.vectordrawable.animated.R
+ androidx.vectordrawable.animated.R$attr
+ androidx.vectordrawable.animated.R$color
+ androidx.vectordrawable.animated.R$dimen
+ androidx.vectordrawable.animated.R$drawable
+ androidx.vectordrawable.animated.R$id
+ androidx.vectordrawable.animated.R$integer
+ androidx.vectordrawable.animated.R$layout
+ androidx.vectordrawable.animated.R$string
+ androidx.vectordrawable.animated.R$style
+ androidx.vectordrawable.animated.R$styleable
 androidx/constraintlayout/widget/R.java
  androidx.constraintlayout.widget.R
  androidx.constraintlayout.widget.R$anim
@@ -449,12 +461,18 @@ com/example/notecook/Fragments/HomeFragment.java
  com.example.notecook.Fragments.HomeFragment$2
 com/example/notecook/ParseApplication.java
  com.example.notecook.ParseApplication
-com/example/notecook/Adapters/DetailRecipeAdapter.java
- com.example.notecook.Adapters.DetailRecipeAdapter
- com.example.notecook.Adapters.DetailRecipeAdapter$HeaderViewHolder
- com.example.notecook.Adapters.DetailRecipeAdapter$IngredientsViewHolder
- com.example.notecook.Adapters.DetailRecipeAdapter$MiddleViewHolder
- com.example.notecook.Adapters.DetailRecipeAdapter$StepsViewHolder
+androidx/viewpager2/R.java
+ androidx.viewpager2.R
+ androidx.viewpager2.R$attr
+ androidx.viewpager2.R$color
+ androidx.viewpager2.R$dimen
+ androidx.viewpager2.R$drawable
+ androidx.viewpager2.R$id
+ androidx.viewpager2.R$integer
+ androidx.viewpager2.R$layout
+ androidx.viewpager2.R$string
+ androidx.viewpager2.R$style
+ androidx.viewpager2.R$styleable
 androidx/slidingpanelayout/R.java
  androidx.slidingpanelayout.R
  androidx.slidingpanelayout.R$attr
@@ -467,6 +485,8 @@ androidx/slidingpanelayout/R.java
  androidx.slidingpanelayout.R$string
  androidx.slidingpanelayout.R$style
  androidx.slidingpanelayout.R$styleable
+com/example/notecook/Adapters/DetailFavAdapter.java
+ com.example.notecook.Adapters.DetailFavAdapter
 androidx/viewpager/R.java
  androidx.viewpager.R
  androidx.viewpager.R$attr
@@ -521,27 +541,13 @@ com/example/notecook/Fragments/ProfileFragment.java
  com.example.notecook.Fragments.ProfileFragment$1
  com.example.notecook.Fragments.ProfileFragment$1$1
  com.example.notecook.Fragments.ProfileFragment$1$2
-androidx/vectordrawable/animated/R.java
- androidx.vectordrawable.animated.R
- androidx.vectordrawable.animated.R$attr
- androidx.vectordrawable.animated.R$color
- androidx.vectordrawable.animated.R$dimen
- androidx.vectordrawable.animated.R$drawable
- androidx.vectordrawable.animated.R$id
- androidx.vectordrawable.animated.R$integer
- androidx.vectordrawable.animated.R$layout
- androidx.vectordrawable.animated.R$string
- androidx.vectordrawable.animated.R$style
- androidx.vectordrawable.animated.R$styleable
-androidx/viewpager2/R.java
- androidx.viewpager2.R
- androidx.viewpager2.R$attr
- androidx.viewpager2.R$color
- androidx.viewpager2.R$dimen
- androidx.viewpager2.R$drawable
- androidx.viewpager2.R$id
- androidx.viewpager2.R$integer
- androidx.viewpager2.R$layout
- androidx.viewpager2.R$string
- androidx.viewpager2.R$style
- androidx.viewpager2.R$styleable
+ com.example.notecook.Fragments.ProfileFragment$2
+com/example/notecook/Adapters/DetailRecipeAdapter.java
+ com.example.notecook.Adapters.DetailRecipeAdapter
+ com.example.notecook.Adapters.DetailRecipeAdapter$HeaderViewHolder
+ com.example.notecook.Adapters.DetailRecipeAdapter$HeaderViewHolder$1
+ com.example.notecook.Adapters.DetailRecipeAdapter$IngredientsViewHolder
+ com.example.notecook.Adapters.DetailRecipeAdapter$MiddleViewHolder
+ com.example.notecook.Adapters.DetailRecipeAdapter$StepsViewHolder
+com/example/notecook/Fragments/DetailFragment.java
+ com.example.notecook.Fragments.DetailFragment

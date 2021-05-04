@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "D:\\Notecook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\521dff0fbebf142f3799fc838bdf61b4\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

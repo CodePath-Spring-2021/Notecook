@@ -11,15 +11,39 @@ public class Fav {
     protected String item_author;
     protected String key_id;
     //protected ParseFile item_image;
-    private byte[] item_image;
+    protected byte[] item_image;
+    protected String image_url;
+    protected String item_type;
+    protected String item_time;
+    protected String ingredientsList;
+    protected String instructions;
+    protected String fav_status;
 
     public Fav() {
     }
 
-    public Fav(String item_title, String key_id, byte[] item_image) {
+    public Fav(String item_title, String key_id, byte[] item_image, String item_type, String author, String time, String ingredientsList, String instructions, String fav_status) {
         this.item_title = item_title;
         this.key_id = key_id;
         this.item_image = item_image;
+        this.item_type = item_type; // 20 for post, 10 for recipe
+        this.item_author = author;
+        this.item_time = time;
+        this.ingredientsList = ingredientsList;
+        this.instructions = instructions;
+        this.fav_status = fav_status;
+    }
+
+    public Fav(String title, String id, String image, String item_type, String author, String time, String ingredientsList, String instructions, String fav_status) {
+        this.item_title = title;
+        this.key_id = id;
+        this.image_url = image;
+        this.item_type = item_type; // 20 for post, 10 for recipe
+        this.item_author = author;
+        this.item_time = time;
+        this.ingredientsList = ingredientsList;
+        this.instructions = instructions;
+        this.fav_status = fav_status;
     }
 
     public String getItem_author() {
@@ -49,5 +73,13 @@ public class Fav {
     public Bitmap getItem_image() {
         Bitmap image = BitmapFactory.decodeByteArray(this.item_image, 0, this.item_image.length);
         return image;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public String getItem_type() {
+        return item_type;
     }
 }

@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bn/values-bn.xml",
+            "outputFile": "D:\\Notecook\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn\\values-bn.xml",
             "map": [
                 {
-                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/b12f4d50b66aabe8e48130abeea491aa/res/values-bn/values-bn.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "105",
-                        "startColumns": "4",
-                        "startOffsets": "9905",
-                        "endColumns": "100",
-                        "endOffsets": "10001"
-                    }
-                },
-                {
-                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/values-bn/values-bn.xml",
+                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\521dff0fbebf142f3799fc838bdf61b4\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/values-bn/values-bn.xml",
+                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\156c48cf343b441017fdf2d9e3921de6\\res\\values-bn\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "285",
+                        "endColumns": "210",
+                        "endOffsets": "495"
+                    },
+                    "to": {
+                        "startLines": "44",
+                        "startColumns": "4",
+                        "startOffsets": "4389",
+                        "endColumns": "210",
+                        "endOffsets": "4595"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\fb3e89e6963bf766e32fa259d5c4661c\\res\\values-bn\\values-bn.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/67c180f85fba8207a16b9d26343908f9/res/values-bn/values.xml",
+                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\b3fc7669f73f3463afad3abb09b2bb9a\\res\\values-bn\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -74,20 +74,20 @@
                     }
                 },
                 {
-                    "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/3a191df50894648a496df64914307bde/res/values-bn/values.xml",
+                    "source": "C:\\Users\\Leader\\.gradle\\caches\\transforms-2\\files-2.1\\8a48efc93631da82cc6985f8459c80a0\\res\\values-bn\\values-bn.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "285",
-                        "endColumns": "210",
-                        "endOffsets": "495"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "44",
+                        "startLines": "105",
                         "startColumns": "4",
-                        "startOffsets": "4389",
-                        "endColumns": "210",
-                        "endOffsets": "4595"
+                        "startOffsets": "9905",
+                        "endColumns": "100",
+                        "endOffsets": "10001"
                     }
                 }
             ]

@@ -1,12 +1,17 @@
 package com.example.notecook.Adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,9 +20,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
+import com.example.notecook.Models.FavDB;
+import com.example.notecook.Models.Post;
 import com.example.notecook.Models.Recipes;
 import com.example.notecook.R;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
@@ -32,7 +42,8 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     final int TYPE_INGREDIENTS = 1;
     final int TYPE_MIDDLE = 2;
     final int TYPE_STEPS = 3;
-
+    private FavDB favDB;
+    HeaderViewHolder holderFav;
 
     public DetailRecipeAdapter(Context context, Recipes recipes) {
         this.context = context;
@@ -45,8 +56,15 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+        favDB = new FavDB(context);
         View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
         if(viewType == TYPE_HEADER) {
+            //create table on first
+            SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+            boolean firstStart = prefs.getBoolean("firstStart", true);
+            if (firstStart) {
+                createTableOnFirstStart();
+            }
             View viewHeader = LayoutInflater.from(context).inflate(R.layout.item_header, parent, false);
             return new HeaderViewHolder(viewHeader);
         }
@@ -67,6 +85,8 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof HeaderViewHolder) {
             ((HeaderViewHolder) holder).bind(recipes);
+            holderFav = ((HeaderViewHolder) holder);
+            readCursorData(recipes, holderFav);
         }
         if(holder instanceof IngredientsViewHolder) {
             ((IngredientsViewHolder) holder).bind(ingredients.get(position));
@@ -101,6 +121,7 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView tvName;
         TextView tvCreator;
         ImageView ivPicture;
+        Button favBtn;
 
         public HeaderViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -108,6 +129,33 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             tvName = itemView.findViewById(R.id.tvName);
             tvCreator = itemView.findViewById(R.id.tvCreator);
             ivPicture = itemView.findViewById(R.id.ivPicture);
+            favBtn = itemView.findViewById(R.id.btnFavorite);
+
+            // add to fav btn
+            favBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+
+                    if (recipes.getFavStatus().equals("0")) {
+                        recipes.setFavStatus("1");
+                        URL url = null;
+                        try {
+                            url = new URL(recipes.getImage());
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                        }
+                        favDB.insertIntoTheDatabase(recipes.getTitle(), recipes.getImage(), recipes.getAuthor(),
+                                recipes.getReadyInMinutes() + "", recipes.getIngredientName(), recipes.getInstructions(),
+                                recipes.getFavStatus(), "10", recipes.getId());
+                        favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+                    } else {
+                        recipes.setFavStatus("0");
+                        favDB.remove_fav(recipes.getId());
+                        favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_shadow);
+                    }
+                }
+            });
         }
 
         public void bind(Recipes recipes) {
@@ -115,12 +163,22 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             tvCreator.setText(recipes.getAuthor() + ", " + Integer.toString(recipes.getReadyInMinutes()) + " min");
             int radius = 30;
             int margin = 10;
-            if(recipes.getImage() != null) {
-                Glide.with(context).load(recipes.getImage()).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
-            }else{
+            if (recipes.getImage() != null) {
+                String imageUrl = recipes.getImage(); // should be a url
+                Glide.with(context).load(imageUrl).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
+            } else{
                 System.out.println("NO PICTURE TO SHOW");
             }
         }
+    }
+
+    private void createTableOnFirstStart() {
+        favDB.insertEmpty();
+
+        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
     }
 
     public class IngredientsViewHolder extends RecyclerView.ViewHolder {
@@ -167,6 +225,29 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             tvSteps.setText(string);
         }
     }
+
+    private void readCursorData(Recipes recipe, HeaderViewHolder viewHolder) {
+        Cursor cursor = favDB.read_all_data(recipe.getId());
+        SQLiteDatabase db = favDB.getReadableDatabase();
+        try {
+            while (cursor.moveToNext()) {
+                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
+                recipe.setFavStatus(item_fav_status);
+
+                //check fav status
+                if (item_fav_status != null && item_fav_status.equals("1")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+                } else if (item_fav_status != null && item_fav_status.equals("0")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_shadow);
+                }
+            }
+        } finally {
+            if (cursor != null && cursor.isClosed())
+                cursor.close();
+            db.close();
+        }
+    }
+
 /*    final int VIEW_TYPE_INGREDIENTS = 0;
     final int VIEW_TYPE_STEPS = 1;
 

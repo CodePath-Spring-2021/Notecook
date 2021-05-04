@@ -78,6 +78,7 @@ public class RecipeListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Changing the font of what is written on the Action Bar
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         TextView tv = new TextView(getApplicationContext());
@@ -120,7 +121,7 @@ public class RecipeListFragment extends Fragment {
         getRecipesId(API_KEY);
     }
 
-    protected void getRecipesId(String API_KEY) {
+    public void getRecipesId(String API_KEY) {
         params.put("ingredients", ingredients);
         params.put("apiKey", API_KEY);
         client.get("https://api.spoonacular.com/recipes/findByIngredients", params, new JsonHttpResponseHandler() {

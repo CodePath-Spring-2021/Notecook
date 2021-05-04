@@ -1,12 +1,16 @@
 package com.example.notecook.Adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
+import com.example.notecook.Models.FavDB;
 import com.example.notecook.Models.Post;
 import com.example.notecook.R;
 
@@ -33,6 +38,8 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     final int TYPE_INGREDIENTS = 1;
     final int TYPE_MIDDLE = 2;
     final int TYPE_STEPS = 3;
+    private FavDB favDB;
+    HeaderViewHolder holderFav;
 
     public DetailPostAdapter(Context context, Post post) {
         this.context = context;
@@ -45,8 +52,15 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+        favDB = new FavDB(context);
         View view = LayoutInflater.from(context).inflate(R.layout.item_list, parent, false);
         if(viewType == TYPE_HEADER) {
+            //create table on first
+            SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+            boolean firstStart = prefs.getBoolean("firstStart", true);
+            if (firstStart) {
+                createTableOnFirstStart();
+            }
             View viewHeader = LayoutInflater.from(context).inflate(R.layout.item_header, parent, false);
             return new HeaderViewHolder(viewHeader);
         }
@@ -67,6 +81,8 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof HeaderViewHolder) {
             ((HeaderViewHolder) holder).bind(post);
+            holderFav = ((HeaderViewHolder) holder);
+            readCursorData(post, holderFav);
         }
         if(holder instanceof IngredientsViewHolder) {
             ((IngredientsViewHolder) holder).bind(ingredients.get(position));
@@ -74,6 +90,7 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         if(holder instanceof StepsViewHolder) {
             ((StepsViewHolder) holder).bind(instructions.get(position - ingredients.size()));
         }
+
     }
 
     @Override
@@ -101,6 +118,7 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         TextView tvName;
         TextView tvCreator;
         ImageView ivPicture;
+        Button favBtn;
 
         public HeaderViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -108,6 +126,27 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             tvName = itemView.findViewById(R.id.tvName);
             tvCreator = itemView.findViewById(R.id.tvCreator);
             ivPicture = itemView.findViewById(R.id.ivPicture);
+            favBtn = itemView.findViewById(R.id.btnFavorite);
+
+            //add to fav btn
+            favBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+
+                    if (post.getFavStatus().equals("0")) {
+                        post.setFavStatus("1");
+                        favDB.insertIntoTheDatabase(post.getRecipeTitle(), post.getImageResource(),
+                                post.getUser().getUsername(), post.getCookTime(), Arrays.asList(post.getIngredientsList().split("\\r?\\n")),
+                                Arrays.asList(post.getRecipeInstructions().split("\\r?\\n")), post.getFavStatus(), "20", post.getKEY_ID());
+                        favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+                    } else {
+                        post.setFavStatus("0");
+                        favDB.remove_fav(post.getKEY_ID());
+                        favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_shadow);
+                    }
+                }
+            });
         }
 
         public void bind(Post recipePost) {
@@ -119,6 +158,15 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 Glide.with(context).load(recipePost.getImage().getUrl()).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
             }
         }
+    }
+
+    private void createTableOnFirstStart() {
+        favDB.insertEmpty();
+
+        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
     }
 
     public class IngredientsViewHolder extends RecyclerView.ViewHolder {
@@ -163,6 +211,28 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             SpannableString string = new SpannableString(instruction);
             string.setSpan(new BulletSpan(10, context.getColor(R.color.black), 10), 0, string.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             tvSteps.setText(string);
+        }
+    }
+
+    private void readCursorData(Post post, HeaderViewHolder viewHolder) {
+        SQLiteDatabase db = favDB.getReadableDatabase();
+        Cursor cursor = favDB.read_all_data(post.getKEY_ID());
+        try {
+            while (cursor.moveToNext()) {
+                String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
+                post.setFavStatus(item_fav_status);
+
+                //check fav status
+                if (item_fav_status != null && item_fav_status.equals("1")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
+                } else if (item_fav_status != null && item_fav_status.equals("0")) {
+                    viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_shadow);
+                }
+            }
+        } finally {
+            if (cursor != null && cursor.isClosed())
+                cursor.close();
+            db.close();
         }
     }
 }
