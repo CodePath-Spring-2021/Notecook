@@ -30,6 +30,7 @@ import com.parse.ParseFile;
 
 import org.parceler.Parcels;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
@@ -140,7 +141,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
                     if (post.getFavStatus().equals("0")) {
                         post.setFavStatus("1");
-                        favDB.insertIntoTheDatabase(post.getRecipeTitle(), post.getImageResource(), post.getKEY_ID(), post.getFavStatus());
+                        favDB.insertIntoTheDatabase(post.getRecipeTitle(), post.getImageResource(),
+                                post.getUser().getUsername(), post.getCookTime(), Arrays.asList(post.getIngredientsList().split("\\r?\\n")),
+                                Arrays.asList(post.getRecipeInstructions().split("\\r?\\n")), post.getFavStatus(), "20", post.getKEY_ID());
                         favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
                     } else {
                         post.setFavStatus("0");

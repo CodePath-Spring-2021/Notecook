@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.vectordrawable:vectordrawable-animated:1.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/173a5aa6e2ee397d8fb005e45e92ff0b/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/173a5aa6e2ee397d8fb005e45e92ff0b/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/173a5aa6e2ee397d8fb005e45e92ff0b/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8397d6427b31390268b83699c87f3c29/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8397d6427b31390268b83699c87f3c29/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8397d6427b31390268b83699c87f3c29/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

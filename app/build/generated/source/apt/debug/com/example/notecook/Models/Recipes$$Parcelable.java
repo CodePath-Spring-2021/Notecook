@@ -71,6 +71,8 @@ public class Recipes$$Parcelable
             }
             parcel$$1 .writeString(recipes$$1 .author);
             parcel$$1 .writeString(recipes$$1 .title);
+            parcel$$1 .writeInt(recipes$$1 .recipeId);
+            parcel$$1 .writeString(recipes$$1 .KEY_FAVSTATUS);
         }
     }
 
@@ -123,6 +125,8 @@ public class Recipes$$Parcelable
             recipes$$4 .ingredientName = list$$1;
             recipes$$4 .author = parcel$$3 .readString();
             recipes$$4 .title = parcel$$3 .readString();
+            recipes$$4 .recipeId = parcel$$3 .readInt();
+            recipes$$4 .KEY_FAVSTATUS = parcel$$3 .readString();
             com.example.notecook.Models.Recipes recipes$$3 = recipes$$4;
             identityMap$$1 .put(identity$$1, recipes$$3);
             return recipes$$3;
