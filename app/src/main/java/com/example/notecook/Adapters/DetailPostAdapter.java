@@ -222,7 +222,7 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 String item_fav_status = cursor.getString(cursor.getColumnIndex(FavDB.FAVORITE_STATUS));
                 post.setFavStatus(item_fav_status);
 
-                //check fav status
+                // check fav status
                 if (item_fav_status != null && item_fav_status.equals("1")) {
                     viewHolder.favBtn.setBackgroundResource(R.drawable.ic_baseline_favorite_24);
                 } else if (item_fav_status != null && item_fav_status.equals("0")) {

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent">
     <item
         android:id="@+id/menu_picture"
-        android:title="Take picture"
+        android:title="\t\t\t\t\tTake picture"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_type"
-        android:title="Type ingredients"
+        android:title="\t\t\tType ingredients"
         app:showAsAction="ifRoom" />
 </menu>

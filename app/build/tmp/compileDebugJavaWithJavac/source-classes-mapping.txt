@@ -252,6 +252,7 @@ com/example/notecook/Fragments/RecipeListFragment.java
  com.example.notecook.Fragments.RecipeListFragment$2
 com/example/notecook/Adapters/RecipesAdapter.java
  com.example.notecook.Adapters.RecipesAdapter
+ com.example.notecook.Adapters.RecipesAdapter$1
  com.example.notecook.Adapters.RecipesAdapter$ViewHolder
  com.example.notecook.Adapters.RecipesAdapter$ViewHolder$1
  com.example.notecook.Adapters.RecipesAdapter$ViewHolder$2

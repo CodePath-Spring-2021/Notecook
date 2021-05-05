@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +18,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.Fragment;
+import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -26,6 +31,10 @@ import com.example.notecook.R;
 
 import org.parceler.Parcels;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -36,6 +45,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     List<Recipes> recipe;
     private FavDB favDB;
     public static final int KEY_RECIPES = 10;
+    Bitmap bitmap;
 
     public RecipesAdapter(Context context, List<Recipes> recipe) {
         this.context = context;
@@ -126,6 +136,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                         URL url = null;
                         try {
                             url = new URL(recipeOne.getImage());
+                            bitmap = getImageBitmapFromUrl(url);
                         } catch (MalformedURLException e) {
                             e.printStackTrace();
                         }
@@ -162,7 +173,60 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, detailFrag).addToBackStack(null).commit();
                 }
             });
-        }
 
+            // place appropriate color on text over an image
+            if (bitmap != null) {
+                setTextColorForImage(tvTitle, bitmap);
+            }
+        }
+    }
+
+    private void setTextColorForImage(TextView tvRecipeTitle, Bitmap firstPhoto) {
+        Palette.from(firstPhoto)
+                .generate(new Palette.PaletteAsyncListener() {
+                    @Override
+                    public void onGenerated(Palette palette) {
+                        Palette.Swatch swatch = palette.getDarkVibrantSwatch();
+                        if (swatch == null && palette.getSwatches().size() > 0) {
+                            swatch = palette.getSwatches().get(0);
+                        }
+
+                        int titleTextColor = Color.WHITE;
+
+                        if (swatch != null) {
+                            titleTextColor = swatch.getTitleTextColor();
+                            titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
+                        }
+                        tvRecipeTitle.setTextColor(titleTextColor);
+                    }
+                });
+    }
+
+    public static Bitmap getImageBitmapFromUrl(URL url)
+    {
+        Bitmap bm = null;
+        try {
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+            if(conn.getResponseCode() != 200)
+            {
+                return bm;
+            }
+            conn.connect();
+            InputStream is = conn.getInputStream();
+
+            BufferedInputStream bis = new BufferedInputStream(is);
+            try
+            {
+                bm = BitmapFactory.decodeStream(bis);
+            }
+            catch(OutOfMemoryError ex)
+            {
+                bm = null;
+            }
+            bis.close();
+            is.close();
+        } catch (Exception e) {}
+
+        return bm;
     }
 }

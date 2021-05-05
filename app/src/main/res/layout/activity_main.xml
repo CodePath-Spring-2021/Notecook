@@ -21,10 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/black"
         app:labelVisibilityMode="labeled"
-        app:itemTextColor="@color/black"
-        app:menu="@menu/menu_bottom_navigation">
+        app:menu="@menu/menu_bottom_navigation"
+        app:itemIconTint="@drawable/bottom_navigation_selector"
+        app:itemTextColor="@drawable/bottom_navigation_selector">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
