@@ -156,13 +156,14 @@ public class DetailFavAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         public void bind(Fav favItem) {
             tvName.setText(favItem.getItem_title());
             tvCreator.setText(favItem.getItem_author() + ", " + favItem.getItem_time() + " min");
+
+            int radius = 30;
+            int margin = 10;
             if (favItem.getItem_type().equals("10")) {     // for recipe for String imageUrl
-                int radius = 30;
-                int margin = 10;
                 Glide.with(context).load(favItem.getImage_url()).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
             }
             else if (favItem.getItem_type().equals("20")) {      // for post with byte[] image
-                ivPicture.setImageBitmap(favItem.getItem_image());
+                Glide.with(context).load(favItem.getItem_image()).transform(new FitCenter(), new RoundedCornersTransformation(radius, margin)).into(ivPicture);
             }
         }
     }

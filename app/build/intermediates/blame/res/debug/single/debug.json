@@ -100,16 +100,20 @@
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/layout-land/material_timepicker.xml"
     },
     {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_abc_cascading_menu_item_layout.xml.flat",
-        "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/layout/abc_cascading_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_abc_cascading_menu_item_layout.xml.flat",
+        "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/layout/abc_cascading_menu_item_layout.xml"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/xml_fileprovider.xml.flat",
@@ -530,6 +534,10 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable_bottom_navigation_selector.xml.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/drawable/bottom_navigation_selector.xml"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/color_material_on_surface_emphasis_high_type.xml.flat",
@@ -1292,6 +1300,10 @@
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/xml/standalone_badge.xml"
     },
     {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_text_view_with_theme_line_height.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/57c277a8de5694a16b305b8f6de9e36c/res/layout/text_view_with_theme_line_height.xml"
     },
@@ -1948,6 +1960,10 @@
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/anim_btn_checkbox_to_checked_icon_null_animation.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/anim/btn_checkbox_to_checked_icon_null_animation.xml"
     },
@@ -2042,6 +2058,10 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-xxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/layout_test_action_chip.xml.flat",
@@ -2244,10 +2264,6 @@
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/b12f4d50b66aabe8e48130abeea491aa/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
-        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/drawable/ic_launcher_background.xml"
-    },
-    {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable-mdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
@@ -2258,10 +2274,6 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/b12f4d50b66aabe8e48130abeea491aa/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
-    },
-    {
-        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_dark_disabled.9.png.flat",
@@ -2650,6 +2662,10 @@
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable_abc_btn_check_material_anim.xml.flat",
         "source": "/Users/munyvuth/.gradle/caches/transforms-2/files-2.1/c88024b2226bc4c55215349a52e9c21d/res/drawable/abc_btn_check_material_anim.xml"
+    },
+    {
+        "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "/Users/munyvuth/AndroidStudioProjects/Notecook/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",

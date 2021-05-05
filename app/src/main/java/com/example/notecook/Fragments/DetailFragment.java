@@ -83,8 +83,8 @@ public class DetailFragment extends Fragment {
         Typeface typeface = ResourcesCompat.getFont(this.getContext(), R.font.euphoria_script);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         tv.setLayoutParams(lp);
-        tv.setText("Recipe Details");
-        tv.setGravity(Gravity.CENTER);
+        tv.setText("    Recipe Details");
+        tv.setGravity(Gravity.LEFT);
         tv.setTextSize(40);
         tv.setTextColor(Color.WHITE);
         tv.setTypeface(typeface, typeface.BOLD);
