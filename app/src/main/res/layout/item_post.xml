@@ -30,7 +30,8 @@
         android:layout_marginBottom="38dp"
         android:paddingRight="50dp"
         android:textColor="#fff"
-        tools:text="Title" />
+        tools:text="Title"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvAuthor"
@@ -40,7 +41,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginBottom="18dp"
         android:textColor="#fff"
-        tools:text="username" />
+        tools:text="username"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/favBtn"

@@ -30,7 +30,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginBottom="18dp"
         android:textColor="#fff"
-        tools:text="Brownies" />
+        tools:text="Brownies"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/favBtn"

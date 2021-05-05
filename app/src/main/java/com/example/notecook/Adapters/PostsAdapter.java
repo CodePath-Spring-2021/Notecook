@@ -5,8 +5,11 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.Fragment;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,8 +30,10 @@ import com.example.notecook.Fragments.DetailFragment;
 import com.example.notecook.Models.FavDB;
 import com.example.notecook.Models.Post;
 import com.example.notecook.R;
+import com.parse.ParseException;
 import com.parse.ParseFile;
 
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.parceler.Parcels;
 
 import java.util.Arrays;
@@ -42,6 +48,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     protected TextView tvRecipeTitle;
     protected TextView tvAuthor;
     public static final int KEY_POST = 20;
+    Bitmap bitmap;
 
     public PostsAdapter(Context context, List<Post> posts) {
         this.context = context;
@@ -167,6 +174,11 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             if (image != null) {
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
+            try {
+                bitmap = BitmapFactory.decodeFile(post.getImage().getFile().getPath());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
             tvRecipeTitle.setText(post.getRecipeTitle() + " - " + post.getCookTime() + "m");
             tvAuthor.setText(post.getUser().getUsername());
@@ -185,8 +197,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             });
 
             // place appropriate color on text over an image
-            //Bitmap bitmap = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
-            //setTextColorForImage(tvRecipeTitle, tvAuthor, bitmap);
+            setTextColorForImage(tvRecipeTitle, tvAuthor, bitmap);
         }
     }
 
@@ -195,7 +206,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 .generate(new Palette.PaletteAsyncListener() {
                     @Override
                     public void onGenerated(Palette palette) {
-                        Palette.Swatch swatch = palette.getVibrantSwatch();
+                        Palette.Swatch swatch = palette.getDarkVibrantSwatch();
                         if (swatch == null && palette.getSwatches().size() > 0) {
                             swatch = palette.getSwatches().get(0);
                         }
@@ -204,7 +215,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
                         if (swatch != null) {
                             titleTextColor = swatch.getTitleTextColor();
-                            //titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
+                            titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
                         }
                         tvRecipeTitle.setTextColor(titleTextColor);
                         tvAuthor.setTextColor(titleTextColor);
