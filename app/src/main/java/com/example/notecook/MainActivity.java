@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.PopupMenu;
@@ -81,5 +82,17 @@ public class MainActivity extends AppCompatActivity {
 
         // set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_home);
+    }
+
+   @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.d(TAG, "Back arrow clicked");
+        if(item.getItemId() == android.R.id.home) {
+            if (getSupportFragmentManager().getBackStackEntryCount() != 0) {
+                getSupportFragmentManager().popBackStack();
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

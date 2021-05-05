@@ -5,6 +5,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Fav {
 
     protected String item_title;
@@ -81,5 +84,25 @@ public class Fav {
 
     public String getItem_type() {
         return item_type;
+    }
+
+    public String getIngredients() {
+        return ingredientsList;
+    }
+
+    public String getSteps() {
+        return instructions;
+    }
+
+    public void setFav_status(String favStatus) {
+        fav_status = favStatus;
+    }
+
+    public String getFav_status() {
+        return fav_status;
+    }
+
+    public String getItem_time() {
+        return item_time;
     }
 }

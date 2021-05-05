@@ -78,6 +78,18 @@ public class RecipeListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_recipe_list, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         // Changing the font of what is written on the Action Bar
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
@@ -92,18 +104,6 @@ public class RecipeListFragment extends Fragment {
         tv.setTypeface(typeface, typeface.BOLD);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setCustomView(tv);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipe_list, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
         String API_KEY = getString(R.string.API_KEY);
 
@@ -113,12 +113,14 @@ public class RecipeListFragment extends Fragment {
         }else{
             Log.i(TAG, "Cannot get ingredientsList");
         }
+        if(recipesList == null) {
+            getRecipesId(API_KEY);
+            recipesList = new ArrayList<>();
+        }
         rvRecipe = view.findViewById(R.id.rvRecipe);
-        recipesList = new ArrayList<>();
         adapter = new RecipesAdapter(getContext(), recipesList);
         rvRecipe.setAdapter(adapter);
         rvRecipe.setLayoutManager(new LinearLayoutManager(getContext()));
-        getRecipesId(API_KEY);
     }
 
     public void getRecipesId(String API_KEY) {
@@ -169,7 +171,7 @@ public class RecipeListFragment extends Fragment {
                         }
                         @Override
                         public void onFailure(int i, Headers headers, String s, Throwable throwable) {
-                            Log.e(TAG, "Fail call", throwable);
+                            Log.e(TAG, "Fail call" + s, throwable);
                         }
                     });
         }

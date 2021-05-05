@@ -70,6 +70,17 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         // Changing the font of what is written on the Action Bar
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
@@ -84,17 +95,7 @@ public class HomeFragment extends Fragment {
         tv.setTypeface(typeface, typeface.BOLD);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setCustomView(tv);
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
-    }
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
         rvPosts = view.findViewById(R.id.rvPosts);
         rvPosts.setHasFixedSize(true);
 
@@ -112,7 +113,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        allPosts = new ArrayList<>();
+        if(allPosts == null) {
+            queryPosts();
+            allPosts = new ArrayList<>();
+        }
         adapter = new PostsAdapter(getContext(), allPosts);
         // Steps to use the recycler view:
         // 0. create layout for one row in the list
@@ -123,8 +127,6 @@ public class HomeFragment extends Fragment {
         // 4. set the layout manager on the recycler view
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rvPosts.setLayoutManager(layoutManager);
-
-        queryPosts();
     }
 
     private void loadMoreData() {

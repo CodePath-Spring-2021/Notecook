@@ -143,6 +143,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         }
 
         public void bind(Recipes recipes) {
+            if(recipe == null) {
+                tvTitle.setText("NO RECIPES TO SHOW, TRY DIFFERENT INGREDIENTS");
+            }
             tvTitle.setText(recipes.getTitle() + " - " + Integer.toString(recipes.getReadyInMinutes()) + "m");
             if(recipes.getImage() != null) {
                 Glide.with(context).load(recipes.getImage()).into(ivPhoto);

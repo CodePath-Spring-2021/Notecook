@@ -14,21 +14,30 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.notecook.Adapters.DetailFavAdapter;
 import com.example.notecook.Adapters.DetailPostAdapter;
 import com.example.notecook.Adapters.DetailRecipeAdapter;
+import com.example.notecook.Adapters.FavAdapter;
+import com.example.notecook.Models.Fav;
 import com.example.notecook.Models.Post;
 import com.example.notecook.Models.Recipes;
 import com.example.notecook.R;
 
 import org.parceler.Parcels;
+
+import java.util.Objects;
 
 import static com.parse.Parse.getApplicationContext;
 
@@ -40,11 +49,8 @@ import static com.parse.Parse.getApplicationContext;
 public class DetailFragment extends Fragment {
 
     public static final String TAG = "DetailFragment";
-    protected TextView tvName;
-    protected TextView tvCreator;
-    protected TextView tvTime;
-    protected ImageView ivPicture;
     protected RecyclerView rvList;
+    int key;
     protected AppCompatButton btnFavorite;
 
     public DetailFragment() {
@@ -84,6 +90,7 @@ public class DetailFragment extends Fragment {
         tv.setTypeface(typeface, typeface.BOLD);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setCustomView(tv);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -97,16 +104,9 @@ public class DetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-/*        tvName = view.findViewById(R.id.tvName);
-        tvCreator = view.findViewById(R.id.tvCreator);
-        tvTime = view.findViewById(R.id.tvTime);
-        ivPicture = view.findViewById(R.id.ivPicture);
-        rvList = view.findViewById(R.id.rvList);
-        btnFavorite = view.findViewById(R.id.btnFavorite);*/
-
         rvList = view.findViewById(R.id.rvList);
         Bundle bundle = this.getArguments();
-        int key = bundle.getInt("key");
+        key = bundle.getInt("key");
         if(key == 10) {
             Recipes recipe = Parcels.unwrap(bundle.getParcelable("recipe"));
             DetailRecipeAdapter recipeAdapter = new DetailRecipeAdapter(getContext(), recipe);
@@ -118,6 +118,12 @@ public class DetailFragment extends Fragment {
             DetailPostAdapter postAdapter = new DetailPostAdapter(getContext(), post);
             rvList.setLayoutManager(new LinearLayoutManager(getContext()));
             rvList.setAdapter(postAdapter);
+        }
+        if(key == 30) {
+            Fav fav = Parcels.unwrap(bundle.getParcelable("favPost"));
+            DetailFavAdapter favAdapter = new DetailFavAdapter(getContext(), fav);
+            rvList.setLayoutManager(new LinearLayoutManager(getContext()));
+            rvList.setAdapter(favAdapter);
         }
     }
 }
