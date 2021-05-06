@@ -92,36 +92,36 @@ public final class R {
         public static final int action_image = 0x7f0a003e;
         public static final int action_text = 0x7f0a0045;
         public static final int actions = 0x7f0a0046;
-        public static final int async = 0x7f0a0052;
-        public static final int blocking = 0x7f0a005b;
-        public static final int bottom = 0x7f0a005c;
-        public static final int chronometer = 0x7f0a0076;
-        public static final int end = 0x7f0a00a9;
-        public static final int forever = 0x7f0a00bf;
-        public static final int icon = 0x7f0a00cf;
-        public static final int icon_group = 0x7f0a00d0;
-        public static final int info = 0x7f0a00d6;
-        public static final int italic = 0x7f0a00d9;
-        public static final int left = 0x7f0a00e5;
-        public static final int line1 = 0x7f0a00e8;
-        public static final int line3 = 0x7f0a00e9;
-        public static final int none = 0x7f0a0129;
-        public static final int normal = 0x7f0a012a;
-        public static final int notification_background = 0x7f0a012b;
-        public static final int notification_main_column = 0x7f0a012c;
-        public static final int notification_main_column_container = 0x7f0a012d;
-        public static final int right = 0x7f0a0146;
-        public static final int right_icon = 0x7f0a0148;
-        public static final int right_side = 0x7f0a0149;
-        public static final int start = 0x7f0a017f;
-        public static final int tag_transition_group = 0x7f0a0192;
-        public static final int tag_unhandled_key_event_manager = 0x7f0a0193;
-        public static final int tag_unhandled_key_listeners = 0x7f0a0194;
-        public static final int text = 0x7f0a0199;
-        public static final int text2 = 0x7f0a019a;
-        public static final int time = 0x7f0a01aa;
-        public static final int title = 0x7f0a01ab;
-        public static final int top = 0x7f0a01af;
+        public static final int async = 0x7f0a0054;
+        public static final int blocking = 0x7f0a005d;
+        public static final int bottom = 0x7f0a005e;
+        public static final int chronometer = 0x7f0a0078;
+        public static final int end = 0x7f0a00ab;
+        public static final int forever = 0x7f0a00c1;
+        public static final int icon = 0x7f0a00d1;
+        public static final int icon_group = 0x7f0a00d2;
+        public static final int info = 0x7f0a00d9;
+        public static final int italic = 0x7f0a00dc;
+        public static final int left = 0x7f0a00e8;
+        public static final int line1 = 0x7f0a00eb;
+        public static final int line3 = 0x7f0a00ec;
+        public static final int none = 0x7f0a012c;
+        public static final int normal = 0x7f0a012d;
+        public static final int notification_background = 0x7f0a012e;
+        public static final int notification_main_column = 0x7f0a012f;
+        public static final int notification_main_column_container = 0x7f0a0130;
+        public static final int right = 0x7f0a0149;
+        public static final int right_icon = 0x7f0a014b;
+        public static final int right_side = 0x7f0a014c;
+        public static final int start = 0x7f0a0183;
+        public static final int tag_transition_group = 0x7f0a0196;
+        public static final int tag_unhandled_key_event_manager = 0x7f0a0197;
+        public static final int tag_unhandled_key_listeners = 0x7f0a0198;
+        public static final int text = 0x7f0a019d;
+        public static final int text2 = 0x7f0a019e;
+        public static final int time = 0x7f0a01af;
+        public static final int title = 0x7f0a01b1;
+        public static final int top = 0x7f0a01b6;
     }
     public static final class integer {
         private integer() {}
@@ -141,7 +141,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f110076;
+        public static final int status_bar_notification_info_overflow = 0x7f11007e;
     }
     public static final class style {
         private style() {}

@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.stetho:stetho:1.5.1@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2eb9ab1bb373d50afa2084e834a6600/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1aff81ea9564f5396bdd8aefd89fc3a3/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2eb9ab1bb373d50afa2084e834a6600/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2eb9ab1bb373d50afa2084e834a6600/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2eb9ab1bb373d50afa2084e834a6600/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1aff81ea9564f5396bdd8aefd89fc3a3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1aff81ea9564f5396bdd8aefd89fc3a3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1aff81ea9564f5396bdd8aefd89fc3a3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.stetho/stetho/1.5.1/b71856fcb682e807ccec3a276e47c94944b6c6ea/stetho-1.5.1-javadoc.jar!/" />
