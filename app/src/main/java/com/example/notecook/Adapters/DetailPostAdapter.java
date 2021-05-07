@@ -45,8 +45,10 @@ public class DetailPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public DetailPostAdapter(Context context, Post post) {
         this.context = context;
         this.post = post;
+        Log.e("DetailPost", post.getIngredientsList() + post.getRecipeInstructions());
         ingredients = Arrays.asList(post.getIngredientsList().split("\\r?\\n"));
         instructions = Arrays.asList(post.getRecipeInstructions().split("\\r?\\n"));
+        Log.e("DetailPost", ingredients + "" + instructions);
     }
 
     @NonNull

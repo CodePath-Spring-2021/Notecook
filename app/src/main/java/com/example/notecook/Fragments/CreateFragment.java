@@ -73,6 +73,21 @@ public class CreateFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // Changing the font of what is written on the Action Bar
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        TextView tv = new TextView(getApplicationContext());
+        Typeface typeface = ResourcesCompat.getFont(this.getContext(), R.font.euphoria_script);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        tv.setLayoutParams(lp);
+        tv.setText("Post a Recipe");
+        tv.setGravity(Gravity.CENTER);
+        tv.setTextSize(40);
+        tv.setTextColor(Color.WHITE);
+        tv.setTypeface(typeface, typeface.BOLD);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(tv);
+
         Button postfragtohome= view.findViewById(R.id.simpleButton);
         Button Image_Capture = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.imageView);
@@ -157,22 +172,13 @@ public class CreateFragment extends Fragment {
         return new File(mediaStorageDir.getPath() + File.separator + fileName);
     }
 
-
     public void movetohome(){
 
-        final FragmentManager homepage=getActivity().getSupportFragmentManager();
+        final FragmentManager homepage = getActivity().getSupportFragmentManager();
         Fragment fragment = new Fragment();
         fragment = new HomeFragment();
         homepage.beginTransaction().replace(R.id.flContainer, fragment).commit();
-
-
-
     }
-
-
-
-
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

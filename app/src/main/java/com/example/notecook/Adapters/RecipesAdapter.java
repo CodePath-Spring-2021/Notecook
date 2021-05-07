@@ -46,6 +46,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     private FavDB favDB;
     public static final int KEY_RECIPES = 10;
     Bitmap bitmap;
+    Bitmap croppedBitmap;
 
     public RecipesAdapter(Context context, List<Recipes> recipe) {
         this.context = context;
@@ -176,7 +177,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
             // place appropriate color on text over an image
             if (bitmap != null) {
-                setTextColorForImage(tvTitle, bitmap);
+                croppedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth() / 2, bitmap.getHeight() / 3);
+                setTextColorForImage(tvTitle, croppedBitmap);
             }
         }
     }

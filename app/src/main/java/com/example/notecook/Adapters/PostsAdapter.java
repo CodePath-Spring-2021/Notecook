@@ -49,6 +49,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     protected TextView tvAuthor;
     public static final int KEY_POST = 20;
     Bitmap bitmap;
+    Bitmap croppedBitmap;
 
     public PostsAdapter(Context context, List<Post> posts) {
         this.context = context;
@@ -81,7 +82,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Post post = posts.get(position);
-        //User user = users.get(position);
         holder.bind(post);
         readCursorData(post, holder);
     }
@@ -163,23 +163,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         public void bind(Post post) {
             // Bind the post data to the view elements
-            //ParseFile profileImage = user.getProfileImage();
-            //if (profileImage != null) {
-            //    Glide.with(context).load(profileImage.getUrl()).into(ivProfile);
-            //}
-            //else {
-            //Glide.with(context).load(R.drawable.ic_launcher_foreground).into(ivProfile);
-            //}
             ParseFile image = post.getImage();
             if (image != null) {
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
-            try {
-                bitmap = BitmapFactory.decodeFile(post.getImage().getFile().getPath());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
             tvRecipeTitle.setText(post.getRecipeTitle() + " - " + post.getCookTime() + "m");
             tvAuthor.setText(post.getUser().getUsername());
 
@@ -196,8 +183,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 }
             });
 
+            try {
+                bitmap = BitmapFactory.decodeFile(post.getImage().getFile().getPath());
+                croppedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth() / 2, bitmap.getHeight() / 3);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
             // place appropriate color on text over an image
-            setTextColorForImage(tvRecipeTitle, tvAuthor, bitmap);
+            setTextColorForImage(tvRecipeTitle, tvAuthor, croppedBitmap);
         }
     }
 
@@ -206,17 +200,23 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 .generate(new Palette.PaletteAsyncListener() {
                     @Override
                     public void onGenerated(Palette palette) {
+                        int titleTextColor = Color.BLACK;
+
                         Palette.Swatch swatch = palette.getDarkVibrantSwatch();
+                        if (swatch != null) {
+                            titleTextColor = Color.WHITE;
+                        }
+
+                        /*
+                        Palette.Swatch swatch = palette.getVibrantSwatch();
                         if (swatch == null && palette.getSwatches().size() > 0) {
                             swatch = palette.getSwatches().get(0);
                         }
-
-                        int titleTextColor = Color.WHITE;
-
                         if (swatch != null) {
                             titleTextColor = swatch.getTitleTextColor();
-                            titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
-                        }
+                        }*/
+
+                        titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
                         tvRecipeTitle.setTextColor(titleTextColor);
                         tvAuthor.setTextColor(titleTextColor);
                     }

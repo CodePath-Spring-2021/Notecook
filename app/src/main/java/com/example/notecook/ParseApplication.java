@@ -16,17 +16,17 @@ public class ParseApplication extends Application {
         ParseObject.registerSubclass(Post.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("e3Q0spXEdds4mCS1MrimmN3rbGcJ8wjgM8vyyLFH")
-                .clientKey("arwJOGeJ23Zzf0S6UbTUPl1IysFZ5G1CYcdY2Xcb")
+                .applicationId("tJNbCKTqZU8Rztwoy5PBvTsv5PLRQ4hWFRlFyZUm")
+                .clientKey("GUiCHUvcGBiEJJvGirPsHypWjFQDO7GewoiuABZz")
                 .server("https://parseapi.back4app.com")
                 .build()
         );
 
-        //TODO: Replace above with below
+        // Old parse
         /*
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("tJNbCKTqZU8Rztwoy5PBvTsv5PLRQ4hWFRlFyZUm")
-                .clientKey("GUiCHUvcGBiEJJvGirPsHypWjFQDO7GewoiuABZz")
+                .applicationId("e3Q0spXEdds4mCS1MrimmN3rbGcJ8wjgM8vyyLFH")
+                .clientKey("arwJOGeJ23Zzf0S6UbTUPl1IysFZ5G1CYcdY2Xcb")
                 .server("https://parseapi.back4app.com")
                 .build()
         );
