@@ -126,7 +126,7 @@ public class TakePictureFragment extends Fragment {
                     return;
                 }
                 ingredientsList = getImageText(photoFile);
-                Log.i(TAG, "ingredients List: " + ingredientsList);
+                Log.e(TAG, "ingredients List: " + ingredientsList);
                 Bundle bundle = new Bundle();
                 bundle.putString("ingredientsList", ingredientsList);
                 RecipeListFragment secFragment = new RecipeListFragment();

@@ -188,17 +188,23 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                 .generate(new Palette.PaletteAsyncListener() {
                     @Override
                     public void onGenerated(Palette palette) {
+                        int titleTextColor = Color.BLACK;
+
                         Palette.Swatch swatch = palette.getDarkVibrantSwatch();
+                        if (swatch != null) {
+                            titleTextColor = Color.WHITE;
+                        }
+
+                        /*
+                        Palette.Swatch swatch = palette.getVibrantSwatch();
                         if (swatch == null && palette.getSwatches().size() > 0) {
                             swatch = palette.getSwatches().get(0);
                         }
-
-                        int titleTextColor = Color.WHITE;
-
                         if (swatch != null) {
                             titleTextColor = swatch.getTitleTextColor();
-                            titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
-                        }
+                        }*/
+
+                        titleTextColor = ColorUtils.setAlphaComponent(titleTextColor, 255);
                         tvRecipeTitle.setTextColor(titleTextColor);
                     }
                 });

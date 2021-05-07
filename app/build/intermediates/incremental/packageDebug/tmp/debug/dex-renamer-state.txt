@@ -1,4 +1,4 @@
-#Thu May 06 23:29:03 PDT 2021
+#Fri May 07 00:20:20 PDT 2021
 base.0=D\:\\Notecook\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.1=classes.dex
 renamed.1=classes2.dex

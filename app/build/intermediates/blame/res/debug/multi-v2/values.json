@@ -22,9 +22,11 @@
                 {
                     "source": "D:\\Notecook\\app\\src\\main\\res\\values\\secrets.xml",
                     "from": {
-                        "startLines": "-1",
-                        "startColumns": "-1",
-                        "startOffsets": "-1"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "68",
+                        "endOffsets": "121"
                     },
                     "to": {
                         "startLines": "1049",
@@ -53,11 +55,9 @@
                 {
                     "source": "D:\\Notecook\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "15,16,-1,-1,-1,-1,-1,-1,12,-1,11,-1",
-                        "startColumns": "4,4,-1,-1,-1,-1,-1,-1,4,-1,4,-1",
-                        "startOffsets": "809,893,-1,-1,-1,-1,-1,-1,667,-1,607,-1",
-                        "endColumns": "82,87,-1,-1,-1,-1,-1,-1,54,-1,58,-1",
-                        "endOffsets": "887,976,-1,-1,-1,-1,-1,-1,717,-1,661,-1"
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "1077,1078,1079,1081,1084,1107,1165,1172,1174,1175,1176,1177",
