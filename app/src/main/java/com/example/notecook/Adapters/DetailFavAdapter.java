@@ -83,6 +83,7 @@ public class DetailFavAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        position = position - 1;
         if(holder instanceof HeaderViewHolder) {
             ((HeaderViewHolder) holder).bind(fav);
             holderFav = ((HeaderViewHolder) holder);
@@ -92,25 +93,26 @@ public class DetailFavAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((IngredientsViewHolder) holder).bind(ingredients.get(position));
         }
         if(holder instanceof StepsViewHolder) {
-            ((StepsViewHolder) holder).bind(instructions.get(position - ingredients.size()));
+            ((StepsViewHolder) holder).bind(instructions.get(position - ingredients.size() - 1));
         }
 
     }
 
     @Override
     public int getItemCount() {
-        return ingredients.size() + instructions.size();
+        return ingredients.size() + instructions.size() + 2;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0) {
+        position = position - 1;
+        if (position == -1) {
             return TYPE_HEADER;
         } else if (position < ingredients.size()) {
             return TYPE_INGREDIENTS;
         } else if (position == ingredients.size()) {
             return TYPE_MIDDLE;
-        } else if ((position - ingredients.size()) < instructions.size()) {
+        } else if ((position - ingredients.size() - 1) < instructions.size()) {
             return TYPE_STEPS;
         }
         return -1;

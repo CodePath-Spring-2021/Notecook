@@ -5,16 +5,16 @@
 
 
     <string name="apps_name">newkkh</string>
-    <string name="ingredient_list">Recipe Steps:(separated by new line)</string>
-    <string name="ingredient_lists">Ingredients List:(separated by new line)</string>
+<!--    <string name="ingredient_list">Recipe Steps: (separated by new line)</string>
+    <string name="ingredient_lists">Ingredients List: (separated by new line)</string>-->
     <string name="time_text">m</string>
     <string name="capture_image">CAPTURE IMAGE</string>
-    <string name="title_description">Title</string>
-    <string name="time_description">Enter time here</string>
+    <string name="title_description">Recipe Title</string>
+    <string name="time_description">Cook time</string>
     <string name="notecook">Time:</string>
     <string name="sign_up">POST</string>
-    <string name="album_description">Type Recipe Steps here </string>
-    <string name="albums_description">Type Ingredients List here </string>
+    <string name="album_description">Recipe steps (separated by new line)</string>
+    <string name="albums_description">Ingredients list (separated by new line)</string>
 
 
 </resources>

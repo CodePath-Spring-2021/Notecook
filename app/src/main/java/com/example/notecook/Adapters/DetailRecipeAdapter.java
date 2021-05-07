@@ -83,6 +83,7 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        position = position - 1;
         if(holder instanceof HeaderViewHolder) {
             ((HeaderViewHolder) holder).bind(recipes);
             holderFav = ((HeaderViewHolder) holder);
@@ -92,24 +93,25 @@ public class DetailRecipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             ((IngredientsViewHolder) holder).bind(ingredients.get(position));
         }
         if(holder instanceof StepsViewHolder) {
-            ((StepsViewHolder) holder).bind(steps.get(position - ingredients.size()));
+            ((StepsViewHolder) holder).bind(steps.get(position - ingredients.size() - 1));
         }
     }
 
     @Override
     public int getItemCount() {
-        return ingredients.size() + steps.size();
+        return ingredients.size() + steps.size() + 2;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0) {
+        position = position - 1;
+        if (position == -1) {
             return TYPE_HEADER;
         } else if (position < ingredients.size()) {
             return TYPE_INGREDIENTS;
         } else if (position == ingredients.size()) {
             return TYPE_MIDDLE;
-        } else if ((position - ingredients.size()) < steps.size()) {
+        } else if ((position - ingredients.size() - 1) < steps.size()) {
             return TYPE_STEPS;
         }
         return -1;
